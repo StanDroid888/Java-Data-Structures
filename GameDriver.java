@@ -1,21 +1,17 @@
 import java.util.Scanner;
 
 
-public class NumberPickerDriver {
+public class GameDriver {
 
-  /**
+  	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 	
-		Scanner get = new Scanner(System.in);
-		NumberPicker numPick1;
+		Player player01;
 				
-		numPick1 = new NumberPicker();
-		numPick1.playGameAutomated();
-		
-		get.close();
-		
+		player01 = new Player();
+		player01.playGameAutomated();
        
 	}
 

@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
-public class NumberPicker {
+public class Player {
   
 	int number;
 	int guessCount; 
@@ -16,7 +16,7 @@ public class NumberPicker {
 		this.number = number;
 	}
 	
-	public NumberPicker() {
+	public Player() {
 	
 		super();
 		
@@ -116,5 +116,5 @@ public void playGameAutomated(){
 
 
 
-}// end NumberPicker.java
+}// end Player.java
 	
