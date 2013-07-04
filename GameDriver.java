@@ -1,5 +1,10 @@
-import java.util.Scanner;
+/**
+ * Programmer: Stanley Wong
+ * File: GameDriver.java
+ * Description: This class contains the main function to kick off the number picker game. 
+ */
 
+import java.util.Scanner;
 
 public class GameDriver {
 
@@ -8,10 +13,10 @@ public class GameDriver {
 	 */
 	public static void main(String[] args) {
 	
-		Player player01;
+		RobotPlayer player01;
 				
-		player01 = new Player();
-		player01.playGameAutomated();
+		player01 = new RobotPlayer();
+		player01.playGame();
        
 	}
 

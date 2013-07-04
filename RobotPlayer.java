@@ -1,6 +1,10 @@
+/**
+ * Programmer: Stanley Wong
+ * File: RobotPlayer.java
+ * Description: This class is the RobotPlayer class used for the number picker game. 
+ * which extends the Player class.
+ */
 import java.util.InputMismatchException;
-import java.util.Scanner;
-
 
 public class RobotPlayer extends Player {
  
