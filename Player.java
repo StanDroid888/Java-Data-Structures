@@ -32,7 +32,10 @@ public class Player {
 		System.out.println("Computer has picked the number: " + randomNumber);
 		
 	}
-	
+/**
+ * Method: playGame
+ * Description: This method starts the game for a player 
+ */	
 public void playGame(){
 		
 		int userAnswer;
@@ -56,16 +59,16 @@ public void playGame(){
 			if (userAnswer == this.number){
 				System.out.println("You've GOT it!");
 				System.out.println("The number was " + this.number);
-				System.out.println("It took " + this.guessCount + " guesses to get the answer.");
+				System.out.println("It took " + guessCount + " guesses to get the answer.");
 				found = true;
 				get.close();
 			}else if (userAnswer < this.number){
 				System.out.println("Your Guess " + userAnswer + " is too LOW!");
 			}else if (userAnswer > this.number){
-				System.out.println("Your Guess " + userAnswer + "is too HIGH!");
+				System.out.println("Your Guess " + userAnswer + " is too HIGH!");
 			}	
 			}catch(InputMismatchException e){ 
-					System.out.println("Illegal type entered: "); 
+					System.out.println("Illegal type entered!!"); 
 					System.exit(1);
 			}// end try and catch
 			 

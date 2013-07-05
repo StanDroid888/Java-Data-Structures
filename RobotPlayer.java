@@ -8,28 +8,27 @@ import java.util.InputMismatchException;
 
 public class RobotPlayer extends Player {
  
-	
+/**
+ * Method: playGame
+ * Description: This method starts the game for a automated player. 
+ */	
 public void playGame(){
 		
 		int userAnswer;
 		boolean found = false;
 			
 		userAnswer = (int)(Math.random() * MAX + 1);
-		guessCount += 1;
 
 		while(!found){
 				
 		try{
-
-			System.out.println("Guess: " + userAnswer + " Numbers of trys: " + this.guessCount );
-
 			guessCount += 1;
-
+			System.out.println("Guess: " + userAnswer + " Numbers of trys: " + this.guessCount );
 					
 			if (userAnswer == this.number){
 				System.out.println("You've GOT it!");
 				System.out.println("The number was " + this.number);
-				System.out.println("It took " + this.guessCount + " guesses to get the answer.");
+				System.out.println("It took " + guessCount + " guesses to get the answer.");
 				found = true;
 
 			}else if (userAnswer < this.number){
