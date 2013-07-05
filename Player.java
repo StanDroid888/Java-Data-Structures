@@ -4,7 +4,6 @@
  * Description: This class is the Player class used for the number picker game. 
  */
 
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -12,7 +11,7 @@ public class Player {
   
 	int number;
 	int guessCount; 
-	
+	protected static final int MAX = 1000;
 	
 	public int getNumber() {
 		return number;
@@ -26,7 +25,7 @@ public class Player {
 	
 		super();
 		
-		int randomNumber = (int)(Math.random() * 1000 + 1);
+		int randomNumber = (int)(Math.random() * MAX + 1);
 		
 		this.guessCount=0;
 		this.number = randomNumber;
@@ -49,8 +48,8 @@ public void playGame(){
 			guessCount += 1;
 
 					
-			if (userAnswer<1 || userAnswer > 1000){
-				System.out.print("YOU NEED A NUMBER BETWEEN 1 and 1000.\n");
+			if (userAnswer<1 || userAnswer > MAX){
+				System.out.print("YOU NEED A NUMBER BETWEEN 1 and MAX.\n");
 				System.out.print("Please enter another number: ");
 				userAnswer = get.nextInt();
 			}

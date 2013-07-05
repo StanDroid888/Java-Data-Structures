@@ -14,7 +14,7 @@ public void playGame(){
 		int userAnswer;
 		boolean found = false;
 			
-		userAnswer = (int)(Math.random() * 1000 + 1);
+		userAnswer = (int)(Math.random() * MAX + 1);
 		guessCount += 1;
 
 		while(!found){
@@ -34,7 +34,7 @@ public void playGame(){
 
 			}else if (userAnswer < this.number){
 				System.out.println("Your Guess " + userAnswer + " is too LOW!");
-				userAnswer = userAnswer + (int)((Math.random() * 1000) % (1000-userAnswer));
+				userAnswer = userAnswer + (int)((Math.random() * MAX) % (MAX-userAnswer));
 
 			}else if (userAnswer > this.number){
 				System.out.println("Your Guess " + userAnswer + " is too HIGH!");
