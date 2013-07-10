@@ -1,0 +1,83 @@
+Script started on Thu 04 Jul 2013 11:50:33 PM EDT
+[01;32mbender@Asus[01;34m ~/Projects/BU/NumberPickerGame $[00m javac [K[K GameDriver 
+
+Number Picker game.
+Enter '1' for Automated Game
+otherwise enter '0' for normal mode.
+
+1
+Computer has picked the number: 4
+Guess: 432 Numbers of trys: 1
+Your Guess 432 is too HIGH!
+Guess: 125 Numbers of trys: 2
+Your Guess 125 is too HIGH!
+Guess: 47 Numbers of trys: 3
+Your Guess 47 is too HIGH!
+Guess: 19 Numbers of trys: 4
+Your Guess 19 is too HIGH!
+Guess: 13 Numbers of trys: 5
+Your Guess 13 is too HIGH!
+Guess: 1 Numbers of trys: 6
+Your Guess 1 is too LOW!
+Guess: 926 Numbers of trys: 7
+Your Guess 926 is too HIGH!
+Guess: 736 Numbers of trys: 8
+Your Guess 736 is too HIGH!
+Guess: 227 Numbers of trys: 9
+Your Guess 227 is too HIGH!
+Guess: 27 Numbers of trys: 10
+Your Guess 27 is too HIGH!
+Guess: 3 Numbers of trys: 11
+Your Guess 3 is too LOW!
+Guess: 318 Numbers of trys: 12
+Your Guess 318 is too HIGH!
+Guess: 26 Numbers of trys: 13
+Your Guess 26 is too HIGH!
+Guess: 13 Numbers of trys: 14
+Your Guess 13 is too HIGH!
+Guess: 3 Numbers of trys: 15
+Your Guess 3 is too LOW!
+Guess: 358 Numbers of trys: 16
+Your Guess 358 is too HIGH!
+Guess: 116 Numbers of trys: 17
+Your Guess 116 is too HIGH!
+Guess: 103 Numbers of trys: 18
+Your Guess 103 is too HIGH!
+Guess: 23 Numbers of trys: 19
+Your Guess 23 is too HIGH!
+Guess: 1 Numbers of trys: 20
+Your Guess 1 is too LOW!
+Guess: 147 Numbers of trys: 21
+Your Guess 147 is too HIGH!
+Guess: 40 Numbers of trys: 22
+Your Guess 40 is too HIGH!
+Guess: 17 Numbers of trys: 23
+Your Guess 17 is too HIGH!
+Guess: 12 Numbers of trys: 24
+Your Guess 12 is too HIGH!
+Guess: 10 Numbers of trys: 25
+Your Guess 10 is too HIGH!
+Guess: 8 Numbers of trys: 26
+Your Guess 8 is too HIGH!
+Guess: 3 Numbers of trys: 27
+Your Guess 3 is too LOW!
+Guess: 215 Numbers of trys: 28
+Your Guess 215 is too HIGH!
+Guess: 120 Numbers of trys: 29
+Your Guess 120 is too HIGH!
+Guess: 68 Numbers of trys: 30
+Your Guess 68 is too HIGH!
+Guess: 47 Numbers of trys: 31
+Your Guess 47 is too HIGH!
+Guess: 17 Numbers of trys: 32
+Your Guess 17 is too HIGH!
+Guess: 6 Numbers of trys: 33
+Your Guess 6 is too HIGH!
+Guess: 4 Numbers of trys: 34
+You've GOT it!
+The number was 4
+It took 35 guesses to get the answer.
+[01;32mbender@Asus[01;34m ~/Projects/BU/NumberPickerGame $[00m e[Ke[Kexit
+exit
+
+Script done on Thu 04 Jul 2013 11:50:53 PM EDT

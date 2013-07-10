@@ -1,0 +1,69 @@
+Script started on Thu 04 Jul 2013 11:48:08 PM EDT
+[01;32mbender@Asus[01;34m ~/Projects/BU/NumberPickerGame $[00m javac [2Pexitjava GameDriver c GameDriver.java Player.java RobotPlayer.java
+[01;32mbender@Asus[01;34m ~/Projects/BU/NumberPickerGame $[00m java GameDriver 
+
+Number Picker game.
+Enter '1' for Automated Game
+otherwise enter '0' for normal mode.
+
+0
+Computer has picked the number: 129
+Please Enter your Guess: 
+24
+Your Guess 24 is too LOW!
+Please Enter your Guess: 
+500
+Your Guess 500 is too HIGH!
+Please Enter your Guess: 
+798   300
+Your Guess 300 is too HIGH!
+Please Enter your Guess: 
+200
+Your Guess 200 is too HIGH!
+Please Enter your Guess: 
+100
+Your Guess 100 is too LOW!
+Please Enter your Guess: 
+129
+You've GOT it!
+The number was 129
+It took 6 guesses to get the answer.
+[01;32mbender@Asus[01;34m ~/Projects/BU/NumberPickerGame $[00m java GameDriver 
+
+Number Picker game.
+Enter '1' for Automated Game
+otherwise enter '0' for normal mode.
+
+0
+Computer has picked the number: 258
+Please Enter your Guess: 
+five
+Illegal type entered!!
+[01;32mbender@Asus[01;34m ~/Projects/BU/NumberPickerGame $[00m java GameDriver 
+
+Number Picker game.
+Enter '1' for Automated Game
+otherwise enter '0' for normal mode.
+
+0
+Computer has picked the number: 98
+Please Enter your Guess: 
+23
+Your Guess 23 is too LOW!
+Please Enter your Guess: 
+43
+Your Guess 43 is too LOW!
+Please Enter your Guess: 
+1000
+Your Guess 1000 is too HIGH!
+Please Enter your Guess: 
+1500
+YOU NEED A NUMBER BETWEEN 1 and MAX.
+Please enter another number: 3 98
+You've GOT it!
+The number was 98
+It took 4 guesses to get the answer.
+[01;32mbender@Asus[01;34m ~/Projects/BU/NumberPickerGame $[00m exit
+exit
+
+Script done on Thu 04 Jul 2013 11:50:12 PM EDT
