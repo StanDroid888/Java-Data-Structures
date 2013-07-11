@@ -5,13 +5,15 @@
 public class LinkedListDriver {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		LinkedList<String> List = new LinkedList();
+		LinkedList<String> List = new LinkedList<String>();
 		
 		
 		for (int i = 1; i <= 10; i++) {
 
+			// Will add a <String> type by making the integer a string and appending
+			// the string "Node" to it. 
+			
 			List.addNodeWithValue(Integer.toString(i) + " Node");
 			System.out.println("\nAdded Node to list with value: " + i);
 		}
@@ -24,7 +26,7 @@ public class LinkedListDriver {
 		List.displayLinkedList(List.getHeadNode());
 		List.deleteNode();
 		List.deleteNode();
-		List.addNodeWithValue("HAHA");
+		List.addNodeWithValue("This is a Test!!");
 		
 		List.displayLinkedList(List.getHeadNode());
 	}

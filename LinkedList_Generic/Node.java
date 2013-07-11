@@ -1,6 +1,7 @@
 /**
  * @author Stanley Wong
- * Generic Version of Linked List
+ * Class: Node.java
+ * Description: This class is a generic for a Node used with the LinkedList class. 
  */
 public class Node<T> {
 
