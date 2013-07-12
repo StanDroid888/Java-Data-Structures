@@ -51,8 +51,14 @@ public class Stack {
 		
 		Node popOffNode = new Node();
 		popOffNode = getTopNode();
+		setStackSize(getStackSize()-1);
 		
-		topNode = topNode.getNextNode();
+		if(stackSize == 1){
+			topNode = null;
+		}else{
+			topNode = topNode.getNextNode();
+		}
+		
 		return (popOffNode);
 	}
 	
