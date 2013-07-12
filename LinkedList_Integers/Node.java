@@ -1,6 +1,8 @@
 /**
  * @author Stanley Wong
- *
+ * Class: Node.java
+ * Description: Node class to be used with LinkedList.java
+ * This version is to be used with int (primative) values. 
  */
 public class Node {
 

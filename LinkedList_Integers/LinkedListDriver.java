@@ -1,11 +1,11 @@
 /**
  * @author Stanley Wong
- *
+ * Class: LinkedListDriver.java
+ * Description: This class is a driver for the LinkedList (Int) class.
  */
 public class LinkedListDriver {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		LinkedList List = new LinkedList();
 		
