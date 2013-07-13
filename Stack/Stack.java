@@ -1,67 +1,76 @@
 /**
  * @author Stanley Wong
- *
+ * Class: Stack.java
+ * Description: Dynamic Stack class which holds <String> types
  */
 public class Stack {
 
 	Node topNode;
 	int stackSize;
-	
+
 	public Stack() {
 		topNode = null;
 		stackSize = 0;
 	}
+
 	public Node getTopNode() {
 		return topNode;
 	}
+
 	public void setTopNode(Node topNode) {
 		this.topNode = topNode;
 	}
+
 	public int getStackSize() {
 		return stackSize;
 	}
+
 	public void setStackSize(int stackSize) {
 		this.stackSize = stackSize;
 	}
-	public boolean isEmpty(){	
-		return (stackSize==0 ? true : false);
+
+	public boolean isEmpty() {
+		return (stackSize == 0 ? true : false);
 	}
-	
+
 	public void push(String data) {
-	
+
 		Node newNode = new Node();
 		newNode.setData(data);
-		setStackSize(getStackSize()+1);
+		setStackSize(getStackSize() + 1);
 
 		if (isEmpty()) {
 			// stack is empty
 			newNode.setNextNode(null);
 			topNode = newNode;
-		}else{
+		} else {
 			// push node to the top of the stack
 			newNode.setNextNode(topNode);
 			topNode = newNode;
 		}
-		
+
 		System.out.println("<< PUSH \"" + newNode.data + "\" TO STACK >>");
 
 	}
-	
+
 	public Node pop() {
-		
+
 		Node popOffNode = new Node();
 		popOffNode = getTopNode();
-		setStackSize(getStackSize()-1);
-		
-		if(stackSize == 1){
+		setStackSize(getStackSize() - 1);
+
+		if (isEmpty()) {
+			System.out.println("Stack is EMPTY!!");
+			return (null);
+		} else if (stackSize == 1) {
 			topNode = null;
-		}else{
+		} else {
 			topNode = topNode.getNextNode();
 		}
-		
+
 		return (popOffNode);
 	}
-	
+
 	// requires the Top of stack as parameter
 	public void showStack(Node current) {
 
@@ -80,5 +89,5 @@ public class Stack {
 		}
 
 	}
-	
+
 }
