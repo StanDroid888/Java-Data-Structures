@@ -1,7 +1,6 @@
 /**
- * @author Stanley Wong
- * Class: Stack.java
- * Description: Generic Version of Dynamic Stack 
+ * @author Stanley Wong Class: Stack.java Description: Generic Version of
+ *         Dynamic Stack
  */
 public class Stack<T> {
 
@@ -33,10 +32,24 @@ public class Stack<T> {
 		return (stackSize == 0 ? true : false);
 	}
 
+	public void clearStack() {
+
+		Node<T> current = getTopNode();
+
+		while (current != null) {
+			pop();
+			current = current.nextNode;
+		}
+
+		System.out.println("\n*****************");
+		System.out.println(" STACK CLEARED!! ");
+		System.out.println("*****************");
+	}
+
 	public void push(T data) {
 
 		Node<T> newNode = new Node<T>();
-		newNode.setData((T)data);
+		newNode.setData((T) data);
 		setStackSize(getStackSize() + 1);
 
 		if (isEmpty()) {
@@ -57,7 +70,6 @@ public class Stack<T> {
 
 		Node<T> popNode = new Node<T>();
 		popNode = getTopNode();
-		setStackSize(getStackSize() - 1);
 
 		if (isEmpty()) {
 			System.out.println("Stack is EMPTY!!");
@@ -67,8 +79,11 @@ public class Stack<T> {
 		} else {
 			topNode = topNode.getNextNode();
 		}
-		
-		System.out.println("## POP \"" + popNode.data + "\" FROM STACK ##");		
+
+		System.out.println("## POP \"" + popNode.data + "\" FROM STACK ##");
+
+		// Decrease Stack Size
+		setStackSize(getStackSize() - 1);
 		return (popNode);
 	}
 
@@ -88,16 +103,6 @@ public class Stack<T> {
 		System.out.println("<< Stack Size: " + getStackSize() + " >>");
 		System.out.println("----------------------");
 
-		/*
-		 * if (current == null) {
-		 * System.out.println("Bottom of Stack Reached!!");
-		 * System.out.println("Stack Size:" + getStackSize()); } else {
-		 * System.out.println("Node Data:" + current.data);
-		 * showStack(current.getNextNode());
-		 * 
-		 * }
-		 */
-
 	}
 
-}
+}// end Stack.java

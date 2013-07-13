@@ -24,6 +24,8 @@ public class StackDriver {
 		stringStack.push("quttro");
 
 		stringStack.showStack();
+		stringStack.clearStack();
+		stringStack.showStack();
 		
 
 	}
