@@ -55,8 +55,8 @@ public class Stack {
 
 	public Node pop() {
 
-		Node popOffNode = new Node();
-		popOffNode = getTopNode();
+		Node popNode = new Node();
+		popNode = getTopNode();
 		setStackSize(getStackSize() - 1);
 
 		if (isEmpty()) {
@@ -67,26 +67,36 @@ public class Stack {
 		} else {
 			topNode = topNode.getNextNode();
 		}
-
-		return (popOffNode);
+		
+		System.out.println("## POP \"" + popNode.data + "\" FROM STACK ##");		
+		return (popNode);
 	}
 
 	// requires the Top of stack as parameter
-	public void showStack(Node current) {
+	public void showStack() {
+
+		Node current = getTopNode();
+
+		System.out.println("\n---------------------");
+		System.out.println("STACK INFO");
+
+		while (current != null) {
+			System.out.println("Node Data: " + current.data);
+			current = current.nextNode;
+		}
+
+		System.out.println("<< Stack Size: " + getStackSize() + " >>");
+		System.out.println("----------------------");
 
 		/*
-		 * while(current != null) { System.out.println("This Node has: " +
-		 * current.data); current = current.nextNode; }
+		 * if (current == null) {
+		 * System.out.println("Bottom of Stack Reached!!");
+		 * System.out.println("Stack Size:" + getStackSize()); } else {
+		 * System.out.println("Node Data:" + current.data);
+		 * showStack(current.getNextNode());
+		 * 
+		 * }
 		 */
-
-		if (current == null) {
-			System.out.println("Bottom of Stack Reached!!");
-			System.out.println("Stack Size:" + getStackSize());
-		} else {
-			System.out.println("Node Data:" + current.data);
-			showStack(current.getNextNode());
-
-		}
 
 	}
 

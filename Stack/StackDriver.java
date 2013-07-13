@@ -17,12 +17,7 @@ public class StackDriver {
 		myStack.pop();
 		myStack.pop();
 		
-		
-		System.out.println(myStack.getTopNode());		
-		System.out.println(myStack.getStackSize());
-
-		
-		myStack.showStack(myStack.getTopNode());
+		myStack.showStack();
 		
 
 	}
