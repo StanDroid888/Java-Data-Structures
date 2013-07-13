@@ -12,8 +12,6 @@ public class PalidromeDriver {
 
 		PalidromeEvaluator myPalidromeEvaluator = new PalidromeEvaluator(userInputString);
 		
-		System.out.println("Your string is:" + myPalidromeEvaluator.toString());
-
 		get.close();
 
 	}
