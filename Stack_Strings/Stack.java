@@ -57,7 +57,6 @@ public class Stack {
 
 		Node popNode = new Node();
 		popNode = getTopNode();
-		setStackSize(getStackSize() - 1);
 
 		if (isEmpty()) {
 			System.out.println("Stack is EMPTY!!");
@@ -69,6 +68,7 @@ public class Stack {
 		}
 		
 		System.out.println("## POP \"" + popNode.data + "\" FROM STACK ##");		
+		setStackSize(getStackSize() - 1);		
 		return (popNode);
 	}
 
