@@ -18,8 +18,6 @@ public class PalidromeEvaluator {
 		// TODO Auto-generated method stub
 		this.isPaladrome = true;
 
-		Node<Character> current = charStack.getTopNode();
-
 		for (int i = 0; i < formattedString.length(); i++) {
 
 			if (charStack.pop().getData() != formattedString.charAt(i)) {

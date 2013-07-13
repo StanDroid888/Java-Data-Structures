@@ -10,7 +10,7 @@ public class PalidromeDriver {
 		System.out.println("Please Enter your sentance now:");
 		userInputString = get.nextLine();
 
-		PalidromeEvaluator myPalidromeEvaluator = new PalidromeEvaluator(userInputString);
+		new PalidromeEvaluator(userInputString);
 		
 		get.close();
 
