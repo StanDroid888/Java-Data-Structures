@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+/**
+ * @author Stanley Wong This is the Driver Class to run the Palindrome Evaluator
+ *         Program.
+ * 
+ */
 public class PalindromeDriver {
 
 	public static void main(String[] args) {
@@ -11,7 +16,7 @@ public class PalindromeDriver {
 		userInputString = get.nextLine();
 
 		new PalindromeEvaluator(userInputString);
-		
+
 		get.close();
 
 	}

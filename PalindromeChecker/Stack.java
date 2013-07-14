@@ -1,37 +1,72 @@
 /**
- * @author Stanley Wong Class: Stack.java Description: Generic Version of
- *         Dynamic Stack
+ * @author Stanley Wong 
+ * Generic Version of a Dynamic Stack.
  */
 public class Stack<T> {
 
 	Node<T> topNode;
 	int stackSize;
 
+	/**
+	 * Constructor
+	 *
+	 */
 	public Stack() {
 		topNode = null;
 		stackSize = 0;
 	}
 
+	/**
+	 * This method will return the top node
+	 * of the stack.
+	 *
+	 */
 	public Node<T> getTopNode() {
 		return topNode;
 	}
-
+	
+	/**
+	 * This method will set the topNode.
+	 *
+	 */
 	public void setTopNode(Node<T> topNode) {
 		this.topNode = topNode;
 	}
 
+	/**
+	 * This method will return
+	 * the number of elements 
+	 * currently in the stack
+	 *
+	 */
 	public int getStackSize() {
 		return stackSize;
 	}
 
+	/**
+	 * This method will be used to 
+	 * update the element stack counter.
+	 *
+	 */
 	public void setStackSize(int stackSize) {
 		this.stackSize = stackSize;
 	}
 
+	/**
+	 * This method will return a boolean 
+	 * to signal if a stack is empty or not.
+	 *
+	 */
 	public boolean isEmpty() {
 		return (stackSize == 0 ? true : false);
 	}
 
+	/**
+	 * This method will clear the stack by
+	 * popping off all of the elements in 
+	 * the stack. 
+	 *
+	 */
 	public void clearStack() {
 
 		Node<T> current = getTopNode();
@@ -46,6 +81,13 @@ public class Stack<T> {
 		System.out.println("*****************");
 	}
 
+	/**
+	 * This method add an element at the top
+	 * of the stack. When called, a new Node 
+	 * object is created and set with the data
+	 * provided in the arguments.  
+	 *
+	 */
 	public void push(T data) {
 
 		Node<T> newNode = new Node<T>();
@@ -66,6 +108,12 @@ public class Stack<T> {
 
 	}
 
+	/**
+	 * This method removes an element from the top
+	 * of the stack. When called, a Node with the copy
+	 * of the popped off node is returned. 
+	 *
+	 */
 	public Node<T> pop() {
 
 		Node<T> popNode = new Node<T>();
@@ -87,7 +135,11 @@ public class Stack<T> {
 		return (popNode);
 	}
 
-	// requires the Top of stack as parameter
+	/**
+	 * This method show the contents of the
+	 * stack. 
+	 *
+	 */
 	public void showStack() {
 
 		Node<T> current = getTopNode();
