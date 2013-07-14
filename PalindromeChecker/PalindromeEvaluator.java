@@ -1,35 +1,35 @@
-public class PalidromeEvaluator {
+public class PalindromeEvaluator {
 
 	String stringToEvaluate;
 	String formattedString;
-	boolean isPaladrome = false;
+	boolean isPalindrome = false;
 	Stack<Character> charStack = new Stack<Character>();
 
-	public PalidromeEvaluator(String stringToEvaluate) {
+	public PalindromeEvaluator(String stringToEvaluate) {
 		super();
 		this.stringToEvaluate = stringToEvaluate;
-		this.isPaladrome = false;
+		this.isPalindrome = false;
 		formatString();
 		fillStack();
-		palidromeCheck();
+		PalindromeCheck();
 	}
 
-	private void palidromeCheck() {
+	private void PalindromeCheck() {
 		// TODO Auto-generated method stub
-		this.isPaladrome = true;
+		this.isPalindrome = true;
 
 		for (int i = 0; i < formattedString.length(); i++) {
 
 			if (charStack.pop().getData() != formattedString.charAt(i)) {
-				this.isPaladrome = false;
+				this.isPalindrome = false;
 			}
 
 		}
 
-		if (this.isPaladrome) {
-			System.out.println("\n\nYES, this is a PALIDROME");
+		if (this.isPalindrome) {
+			System.out.println("\n\nYES, this is a Palindrome");
 		} else {
-			System.out.println("\n\nNO, this is NOT PALIDROME");
+			System.out.println("\n\nNO, this is NOT Palindrome");
 		}
 
 	}
@@ -61,8 +61,8 @@ public class PalidromeEvaluator {
 
 	@Override
 	public String toString() {
-		return "PalidromeEvaluator [stringToEvaluate=" + stringToEvaluate
-				+ ", isPaladrome=" + isPaladrome + ", charStack=" + charStack
+		return "PalindromeEvaluator [stringToEvaluate=" + stringToEvaluate
+				+ ", isPalindrome=" + isPalindrome + ", charStack=" + charStack
 				+ "]";
 	}
 

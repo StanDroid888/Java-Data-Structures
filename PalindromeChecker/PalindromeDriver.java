@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PalidromeDriver {
+public class PalindromeDriver {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -10,7 +10,7 @@ public class PalidromeDriver {
 		System.out.println("Please Enter your sentance now:");
 		userInputString = get.nextLine();
 
-		new PalidromeEvaluator(userInputString);
+		new PalindromeEvaluator(userInputString);
 		
 		get.close();
 
