@@ -1,6 +1,6 @@
 /**
  * @author Stanley Wong
- * Description: Generic Node to be used with Stack.java (Generic Version)
+ * Generic Node to be used with Stack.java (Generic Version)
  */
 public class Node<T> {
 	T data;
