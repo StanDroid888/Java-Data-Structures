@@ -39,7 +39,7 @@ public class LinkedList<Type> {
 
 		Node<Type> newNode = new Node<Type>((Type) value);
 
-		if (headNode == null) { // list is empty
+		if (null == headNode) { // list is empty
 			headNode = newNode;
 			listSize = listSize + 1;
 			// System.out.println(headNode);
@@ -57,10 +57,9 @@ public class LinkedList<Type> {
 	 * Method: displayLinkedList Description: This method traverses the linked
 	 * list via recursion and prints out the elements on the way.
 	 */
-
 	public void displayLinkedList(Node<Type> currentNode) {
 
-		if (currentNode == null) {
+		if (null == currentNode) {
 			System.out.print("End of List\n\n ");
 			System.out.println("List size is " + listSize);
 			return;
@@ -75,7 +74,6 @@ public class LinkedList<Type> {
 	 * Method: deleteNode Description: This method will remove the node at the
 	 * end of the linked list.
 	 */
-
 	public void deleteNode() {
 
 		Node<Type> currentNode = new Node<Type>();
