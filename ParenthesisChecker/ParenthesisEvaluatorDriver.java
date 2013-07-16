@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * @author Stanley Wong Driver for Parenthesis Evaluator
+ */
 public class ParenthesisEvaluatorDriver {
 
 	public static void main(String[] args) {
