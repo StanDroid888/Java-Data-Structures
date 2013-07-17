@@ -1,7 +1,10 @@
-/**
- * @author Stanley Wong 
- * Generic Version of a Dynamic Stack.
- */
+/**************************************************************
+ * 
+ * PROGRAMMER: Stanley Wong FILENAME: Stack.java
+ * 
+ * DISCRIPTION: Generic Dynamic Stack (requires Node.java)
+ * 
+ **************************************************************/
 public class Stack<T> {
 
 	Node<T> topNode;
@@ -9,7 +12,7 @@ public class Stack<T> {
 
 	/**
 	 * Constructor
-	 *
+	 * 
 	 */
 	public Stack() {
 		topNode = null;
@@ -17,55 +20,49 @@ public class Stack<T> {
 	}
 
 	/**
-	 * This method will return the top node
-	 * of the stack.
-	 *
+	 * This method will return the top node of the stack.
+	 * 
 	 */
 	public Node<T> getTopNode() {
 		return topNode;
 	}
-	
+
 	/**
 	 * This method will set the topNode.
-	 *
+	 * 
 	 */
 	public void setTopNode(Node<T> topNode) {
 		this.topNode = topNode;
 	}
 
 	/**
-	 * This method will return
-	 * the number of elements 
-	 * currently in the stack
-	 *
+	 * This method will return the number of elements currently in the stack
+	 * 
 	 */
 	public int getStackSize() {
 		return stackSize;
 	}
 
 	/**
-	 * This method will be used to 
-	 * update the element stack counter.
-	 *
+	 * This method will be used to update the element stack counter.
+	 * 
 	 */
 	public void setStackSize(int stackSize) {
 		this.stackSize = stackSize;
 	}
 
 	/**
-	 * This method will return a boolean 
-	 * to signal if a stack is empty or not.
-	 *
+	 * This method will return a boolean to signal if a stack is empty or not.
+	 * 
 	 */
 	public boolean isEmpty() {
 		return (stackSize == 0 ? true : false);
 	}
 
 	/**
-	 * This method will clear the stack by
-	 * popping off all of the elements in 
-	 * the stack. 
-	 *
+	 * This method will clear the stack by popping off all of the elements in
+	 * the stack.
+	 * 
 	 */
 	public void clearStack() {
 
@@ -82,11 +79,9 @@ public class Stack<T> {
 	}
 
 	/**
-	 * This method add an element at the top
-	 * of the stack. When called, a new Node 
-	 * object is created and set with the data
-	 * provided in the arguments.  
-	 *
+	 * This method add an element at the top of the stack. When called, a new
+	 * Node object is created and set with the data provided in the arguments.
+	 * 
 	 */
 	public void push(T data) {
 
@@ -94,6 +89,10 @@ public class Stack<T> {
 		newNode.setData((T) data);
 		setStackSize(getStackSize() + 1);
 
+		/*
+		 * Two special cases for a push() are a empty stack or a stack with
+		 * elements already in it.
+		 */
 		if (isEmpty()) {
 			// stack is empty
 			newNode.setNextNode(null);
@@ -109,16 +108,19 @@ public class Stack<T> {
 	}
 
 	/**
-	 * This method removes an element from the top
-	 * of the stack. When called, a Node with the copy
-	 * of the popped off node is returned. 
-	 *
+	 * This method removes an element from the top of the stack. When called, a
+	 * Node with the copy of the popped off node is returned.
+	 * 
 	 */
 	public Node<T> pop() {
 
 		Node<T> popNode = new Node<T>();
 		popNode = getTopNode();
 
+		/*
+		 * Three special cases for a pop() are a empty stack, only one node at
+		 * the top and a stack with multiple elements.
+		 */
 		if (isEmpty()) {
 			System.out.println("Stack is EMPTY!!");
 			return (null);
@@ -136,12 +138,16 @@ public class Stack<T> {
 	}
 
 	/**
-	 * This method show the contents of the
-	 * stack. 
-	 *
+	 * This method show the contents of the stack.
+	 * 
 	 */
 	public void showStack() {
 
+		/*
+		 * Traverse the stack by starting at the top node and then get to the
+		 * next node by setting to current node "pointer" to the next node until
+		 * Null is reached.
+		 */
 		Node<T> current = getTopNode();
 
 		System.out.println("\n---------------------");

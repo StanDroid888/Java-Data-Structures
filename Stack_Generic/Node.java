@@ -1,7 +1,11 @@
-/**
- * @author Stanley Wong
- * Generic Node to be used with Stack.java (Generic Version)
- */
+/**************************************************************
+ *
+ * PROGRAMMER: Stanley Wong
+ * FILENAME:   Node.java
+ *
+ * DISCRIPTION: Generic Node class to be used with Stack.java
+ *           		
+ **************************************************************/
 public class Node<T> {
 	T data;
 	Node<T> nextNode;
