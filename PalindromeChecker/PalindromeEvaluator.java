@@ -1,10 +1,16 @@
-/**
- * @author Stanley Wong This class is used to evaluate if a string of text is in
- *         fact a palindrome. A palindrome is a word, phrase, number, or other
- *         sequence of symbols or elements, which is the same reading from left
- *         to right as well as from right to left.
- * 
- */
+/***********************************************************************		
+ *
+ * PROGRAMMER: Stanley Wong
+ * FILENAME:   PalindromeEvaluator.java
+ *
+ * DISCRIPTION: This class is used to evaluate if a string of text 
+ * 				is in fact a palindrome. A palindrome is a word, phrase, 
+ * 				number, or other sequence of symbols or elements, which 
+ * 				is the same reading from left to right as well as from 
+ * 				right to leftThis is the Driver class for the 
+ * 				PalindromeEvaluator.java class.
+ *           		
+ ***********************************************************************/
 public class PalindromeEvaluator {
 
 	String stringToEvaluate;
