@@ -1,8 +1,9 @@
 /**************************************************************
  * 
- * PROGRAMMER: Stanley Wong FILENAME: Stack.java
+ * PROGRAMMER: Stanley Wong 
+ * FILENAME: Stack.java
  * 
- * DISCRIPTION: Generic Dynamic Stack (requires Node.java)
+ * DESCRIPTION: Generic Dynamic Stack (requires Node.java)
  * 
  **************************************************************/
 public class Stack<T> {

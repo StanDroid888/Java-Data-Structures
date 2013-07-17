@@ -3,7 +3,7 @@
  * PROGRAMMER: Stanley Wong
  * FILENAME:   Node.java
  *
- * DISCRIPTION: Generic Node class to be used with Stack.java
+ * DESCRIPTION: Generic Node class to be used with Stack.java
  *           		
  **************************************************************/
 public class Node<T> {
