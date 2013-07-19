@@ -1,8 +1,7 @@
 /**
- * @author Stanley Wong
- * This program check a user input string to determine
- * if the parenthesis are balanced. 
- *
+ * @author Stanley Wong This program check a user input string to determine if
+ *         the parenthesis are balanced.
+ * 
  */
 public class ParenthesisEvaluator {
 
@@ -22,16 +21,12 @@ public class ParenthesisEvaluator {
 	}
 
 	/**
-	 * This method formats a user input string by removing all characters 
-	 * which are not "(",")", or letters. Afterward, the string is 
-	 * capitalized. 
+	 * This method formats a user input string by removing all characters which
+	 * are not "(",")", or letters. Afterward, the string is capitalized.
 	 */
 	private void formatString() {
 		formattedString = stringToEvaluate.replaceAll("[^a-zA-Z()]", "")
 				.toUpperCase();
-
-		System.out.println("FORMATTED:" + formattedString);
-
 	}
 
 	/**
@@ -49,13 +44,13 @@ public class ParenthesisEvaluator {
 				charStack.push(formattedString.charAt(i));
 			} else if (')' == formattedString.charAt(i)) {
 
-				// If charStack is empty, then there are too many ")" 
-				// and can't pop() anymore. 
+				// If charStack is empty, then there are too many ")"
+				// and can't pop() anymore.
 				if (charStack.isEmpty()) {
 					System.out
 							.println("\n\n------------------------------------");
 					System.out.println("\"" + stringToEvaluate
-							+ " \"is NOT BALANCED.");
+							+ "\" is NOT BALANCED.");
 					System.out.println("Unmatched \")\"");
 					return;
 				} else {
@@ -69,11 +64,12 @@ public class ParenthesisEvaluator {
 		// "(" in the string.
 		if (!charStack.isEmpty()) {
 			System.out.println("\n\n------------------------------------");
-			System.out.println("\"" + stringToEvaluate + " \"is NOT BALANCED.");
+			System.out.println("\"" + stringToEvaluate + "\" is NOT BALANCED.");
 			System.out.println("Unmatched \"(\"");
 		} else {
 			System.out.println("\n\n------------------------------------");
-			System.out.println("\"" + stringToEvaluate + "\" has BALANCED parenthesis.");
+			System.out.println("\"" + stringToEvaluate
+					+ "\" has BALANCED parenthesis.");
 		}
 
 	}
