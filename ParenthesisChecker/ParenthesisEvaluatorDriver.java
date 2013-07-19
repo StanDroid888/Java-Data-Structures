@@ -6,9 +6,8 @@ import java.util.Scanner;
 public class ParenthesisEvaluatorDriver {
 
 	/**
-	 * This method runs the Parenthesis Evaluator program.
-	 * The program will continues to run until user enters
-	 * "exit" as input.
+	 * This method runs the Parenthesis Evaluator program. The program will
+	 * continues to run until user enters "exit" as input.
 	 */
 	public void runDriver() {
 
@@ -24,7 +23,7 @@ public class ParenthesisEvaluatorDriver {
 				System.out.println("EXITING PROGRAM");
 				break;
 			}
-			new ParenthesisEvaluator (userInputString);
+			new ParenthesisEvaluator(userInputString);
 
 		}
 
@@ -32,10 +31,11 @@ public class ParenthesisEvaluatorDriver {
 
 	}
 
-	
 	/**
+	 * main method for ParenthesisEvaluator program.
+	 * 
 	 * @param args
-	 * main method for ParenthesisEvaluator program. 
+	 * 
 	 */
 	public static void main(String[] args) {
 
