@@ -3,7 +3,7 @@ public class QueueDriver {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Queue TestQueue = new Queue();
+		Queue<Integer> TestQueue = new Queue<Integer>();
 		TestQueue.addToQueue(1);
 		TestQueue.addToQueue(2);
 		TestQueue.addToQueue(3);

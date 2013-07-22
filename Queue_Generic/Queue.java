@@ -45,11 +45,13 @@ public class Queue<T> {
 	 * 
 	 * @param data
 	 */
-	public void addToQueue(Integer data) {
+	public void addToQueue(T data) {
 		// All new nodes will be added to the
 		// tail of the Queue.
 
-		Node<T> newNode = new Node(data);
+		Node<T> newNode = new Node<T>();
+		
+		newNode.setData(data);
 		newNode.setNextNode(null);
 
 		if (isEmpty()) {
@@ -87,9 +89,9 @@ public class Queue<T> {
 	 * 
 	 * @return
 	 */
-	public Node removeFromQueue() {
+	public Node<T> removeFromQueue() {
 
-		Node<T> deletedNode = new Node();
+		Node<T> deletedNode = new Node<T>();
 
 		// Set the data in the return node with
 		// what is currently in the head node;
@@ -99,7 +101,7 @@ public class Queue<T> {
 		// so that the garbage collector will
 		// get rid of the node originally at the
 		// head of the queue;
-		head = getHead().getNextNode();
+		head = head.getNextNode();
 
 		// Decrease the size of the Queue
 		queueSize--;

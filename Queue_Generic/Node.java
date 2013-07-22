@@ -5,7 +5,7 @@
 public class Node<T> {
 
 	T data;
-	Node nextNode;
+	Node<T> nextNode;
 
 	public Node() {
 		super();
@@ -25,11 +25,11 @@ public class Node<T> {
 		this.data = data;
 	}
 
-	public Node getNextNode() {
+	public Node<T> getNextNode() {
 		return nextNode;
 	}
 
-	public void setNextNode(Node nextNode) {
+	public void setNextNode(Node<T> nextNode) {
 		this.nextNode = nextNode;
 	}
 
