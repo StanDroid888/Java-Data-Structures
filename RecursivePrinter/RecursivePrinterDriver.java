@@ -1,4 +1,10 @@
-
+/**
+ * 
+ * Programmer: Stanley Wong
+ * 
+ * This is a driver for the RecursivePrinter class. 
+ * 
+ */
 public class RecursivePrinterDriver {
 
 	public static void main(String[] args) {

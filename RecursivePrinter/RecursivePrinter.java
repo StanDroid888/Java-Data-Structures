@@ -1,13 +1,34 @@
+/**
+ * 
+ * Programmer: Stanley Wong
+ * 
+ * This program prints out a pattern of characters in which the first line
+ * contains one character. The next line (if needed) will contain two
+ * characters. This pattern continues until the number of character printed on
+ * one line is equal to the depth value specified as a argument in the
+ * constructor. At that point, the pattern is reversed and each line has one
+ * less character until only one character is printed on the last line.
+ * 
+ */
 public class RecursivePrinter {
 
 	char charValue;
 	int depthValue;
 
+	/**
+	 * Constructor with default values
+	 */
 	public RecursivePrinter() {
 		this.charValue = '*';
 		this.depthValue = 1;
 	}
 
+	/**
+	 * Constructor with arguments
+	 * 
+	 * @param depthValue
+	 * @param charValue
+	 */
 	public RecursivePrinter(int depthValue, char charValue) {
 
 		this.charValue = charValue;
