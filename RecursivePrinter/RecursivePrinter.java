@@ -47,20 +47,73 @@ public class RecursivePrinter {
 	}
 
 	/**
+	 * Getter for charValue
+	 * @return
+	 */
+	public char getCharValue() {
+		return charValue;
+	}
+	
+	/**
+	 * Getter for depthValue
+	 * @return
+	 */
+	public int getDepthValue() {
+		return depthValue;
+	}
+	
+	/**
+	 * This method prints out a line of characters which is "timesToPrint" in
+	 * length.
+	 * 
+	 * @param timesToPrint
+	 */
+	private void printCharLine(int timesToPrint) {
+		for (int i = 0; i < timesToPrint; i++) {
+			System.out.printf("%c", this.charValue);
+		}
+		System.out.println();
+	}
+
+	/**
+	 * This method prints both halves of the pattern. The parameter "depthValue"
+	 * needs to be equal to one. This method calls itself recursively to
+	 * continue printing out the pattern. The base case is when the depthValue
+	 * is equal to this.depthValue. There are two calls to printCharLine(). The
+	 * first call is executed right away, but the second call to printCharLine()
+	 * does not occur till the recursion is completed.
+	 * 
+	 * @param depthValue
+	 */
+	public void print(int depthValue) {
+
+		printCharLine(depthValue);
+
+		// Base Case is when the depthValue is equal to this instance's
+		// depthValue.
+		if (depthValue == this.depthValue) {
+			printCharLine(this.depthValue);
+			return;
+		} else {
+			// Continue recursively until base case reached.
+			print(depthValue + 1);
+		}
+		// This method call will not execute till recursion is completed.
+		printCharLine(depthValue);
+
+	}
+
+	/**
 	 * This method prints the first half the pattern. The parameter "depthValue"
 	 * needs to be equal to one. This method calls itself recursively to
 	 * continue printing out the pattern. The base case is when the depthValue
-	 * is equal to this.depthValue;
+	 * is equal to this.depthValue.
 	 * 
 	 * @param depthValue
 	 */
 	public void printUp(int depthValue) {
 
-		for (int i = 0; i < depthValue; i++) {
-			System.out.printf("%c", this.charValue);
-		}
-
-		System.out.println();
+		printCharLine(depthValue);
 
 		if (depthValue == this.depthValue) {
 			return;
@@ -69,6 +122,7 @@ public class RecursivePrinter {
 		}
 
 	}
+
 
 	/**
 	 * This method prints the second half the pattern. The parameter
@@ -80,30 +134,13 @@ public class RecursivePrinter {
 	 */
 	public void printDown(int depthValue) {
 
-		for (int i = 0; i < depthValue; i++) {
-			System.out.printf("%c", this.charValue);
-		}
-
-		System.out.println();
+		printCharLine(depthValue);
 
 		if (depthValue == 0) {
 			return;
 		} else {
 			printDown(depthValue - 1);
 		}
-
-	}
-
-	/**
-	 * This method prints out the pattern to the standard output by calling the
-	 * methods printUp and printDown respectively.
-	 * 
-	 */
-	public void print() {
-
-		printUp(1);
-		printDown(this.depthValue);
-
 	}
 
 }
