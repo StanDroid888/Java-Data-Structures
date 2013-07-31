@@ -48,31 +48,44 @@ public class RecursivePrinter {
 
 	/**
 	 * Getter for charValue
+	 * 
 	 * @return
 	 */
 	public char getCharValue() {
 		return charValue;
 	}
-	
+
 	/**
 	 * Getter for depthValue
+	 * 
 	 * @return
 	 */
 	public int getDepthValue() {
 		return depthValue;
 	}
-	
+
 	/**
 	 * This method prints out a line of characters which is "timesToPrint" in
-	 * length.
+	 * length. Each time a recursive call is made, a '*' is printed once. The
+	 * base case is if the timeToPrint parameter is zero.
 	 * 
 	 * @param timesToPrint
 	 */
 	private void printCharLine(int timesToPrint) {
-		for (int i = 0; i < timesToPrint; i++) {
-			System.out.printf("%c", this.charValue);
+
+		/*
+		 * Base Case is when timesToPrint is zero, otherwise just keep calling
+		 * method recursively and print the character which is assigned the
+		 * "charValue" each time through.
+		 */
+		if (timesToPrint > 0) {
+			System.out.print(this.charValue);
+			printCharLine(timesToPrint - 1);
+		} else {
+			System.out.println();
 		}
-		System.out.println();
+
+		return;
 	}
 
 	/**
@@ -103,44 +116,4 @@ public class RecursivePrinter {
 
 	}
 
-	/**
-	 * This method prints the first half the pattern. The parameter "depthValue"
-	 * needs to be equal to one. This method calls itself recursively to
-	 * continue printing out the pattern. The base case is when the depthValue
-	 * is equal to this.depthValue.
-	 * 
-	 * @param depthValue
-	 */
-	public void printUp(int depthValue) {
-
-		printCharLine(depthValue);
-
-		if (depthValue == this.depthValue) {
-			return;
-		} else {
-			printUp(depthValue + 1);
-		}
-
-	}
-
-
-	/**
-	 * This method prints the second half the pattern. The parameter
-	 * "depthValue" needs to be equal to this.depthValue. This method calls
-	 * itself recursively to continue printing out the pattern. The base case is
-	 * when the depthValue is zero.
-	 * 
-	 * @param depthValue
-	 */
-	public void printDown(int depthValue) {
-
-		printCharLine(depthValue);
-
-		if (depthValue == 0) {
-			return;
-		} else {
-			printDown(depthValue - 1);
-		}
-	}
-
-}
+}// end Recursive Printer Class
