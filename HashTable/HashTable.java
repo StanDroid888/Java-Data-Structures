@@ -1,7 +1,7 @@
 /*
  * Programmer: Stanley Wong
  * Class: HashTable.java
- * Description: This class contains the implementation of a Open Address Hash Table.
+ * Description: A implementation of a Open Address Hash Table
  * 
  */
 public class HashTable {
@@ -33,25 +33,44 @@ public class HashTable {
 
 	}
 
+	int getHash(int key) {
+
+		return (key % hashTableSize);
+
+	}
+
 	/*
 	 * Add a new element into the hash table.
 	 */
 	void put(int key) {
 
 		int index = 0;
+		boolean added = false;
 
-		/*
-		 * Create a index based on the key.
-		 */
-		index = (key % hashTableSize);
+		index = getHash(key);
 
-		/*
-		 * Create a new Hash Node with the key value as the data and place it in
-		 * the hash table.
-		 */
-		this.hashTable[index] = new HashNode(key);
-		this.hashTable[index].setNodeStatus(Status.IN_USE);
+		while (!added) {
 
+			switch (this.hashTable[index].getNodeStatus()) {
+			case IN_USE:
+				index++;
+				break;
+			case PREVIOUSLY_USED:
+			case UNUSED:
+				/*
+				 * Create a new Hash Node with the key value as the data and
+				 * place it in the hash table.
+				 */
+				this.hashTable[index] = new HashNode(key);
+				this.hashTable[index].setNodeStatus(Status.IN_USE);
+				added = true;
+				break;
+			default:
+				added = false;
+				break;
+			}
+
+		}
 	}
 
 	int get(int key) {
@@ -69,7 +88,8 @@ public class HashTable {
 
 		for (int i = 0; i < this.hashTableSize; i++) {
 
-			System.out.print("Location " + i + " " + hashTable[i].getNodeStatus());
+			System.out.print("Location " + i + " "
+					+ hashTable[i].getNodeStatus());
 			System.out.print(" | Key Value : " + hashTable[i].getData());
 			System.out.println();
 

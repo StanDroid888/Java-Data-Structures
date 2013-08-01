@@ -1,6 +1,7 @@
 /**
- * @author Stanley Wong
+ * Programmer: Stanley Wong
  * Class: HashNode.java
+ * Description: Node class to be used with HashTable.java
  *
  */
 public class HashNode {
