@@ -12,6 +12,7 @@ public class HashTable {
 
 	/**
 	 * Constructor
+	 * 
 	 * @param size
 	 */
 	public HashTable(int size) {
@@ -37,10 +38,9 @@ public class HashTable {
 
 	}
 
-	
 	/**
-	 * Creates a hash index based on key
-	 * value passed in as argument.
+	 * Creates a hash index based on key value passed in as argument.
+	 * 
 	 * @param key
 	 * @return
 	 */
@@ -65,8 +65,8 @@ public class HashTable {
 			switch (this.hashTable[index].getNodeStatus()) {
 			case IN_USE:
 				/*
-				 * If the getHash() returns a index already in use,
-				 * increment the index until a free slot is found.
+				 * If the getHash() returns a index already in use, increment
+				 * the index until a free slot is found.
 				 */
 				index++;
 				break;
@@ -94,7 +94,27 @@ public class HashTable {
 		return 0;
 	}
 
+	/**
+	 * This method returns TRUE if the key passed in as a argument is in the
+	 * hash table. Otherwise, the method returns FALSE signalling that the
+	 * particular key is not in the hash table at this time.
+	 * 
+	 * @param key
+	 * @return
+	 */
 	public boolean contains(int key) {
+
+		int index = getHash(key);
+
+		while (this.hashTable[index].getNodeStatus() == Status.IN_USE) {
+
+			if (this.hashTable[index].getData() == key) {
+				System.out.println("Key " + this.hashTable[index].getData()
+						+ " found.");
+				return true;
+
+			}
+		}
 		return false;
 	}
 

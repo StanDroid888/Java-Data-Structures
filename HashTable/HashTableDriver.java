@@ -22,11 +22,15 @@ public class HashTableDriver {
 		myHashTable.put(100);
 		myHashTable.put(30);
 		myHashTable.put(50);
-
-
-
+		
 		myHashTable.printHash();
 
+		System.out.println(myHashTable.contains(30));	
+		System.out.println(myHashTable.contains(67));	
+
+		System.out.println("End program");
+		
+		
 	}
 
 }
