@@ -50,6 +50,7 @@ public class HashTable {
 		 * the hash table.
 		 */
 		this.hashTable[index] = new HashNode(key);
+		this.hashTable[index].setNodeStatus(Status.IN_USE);
 
 	}
 

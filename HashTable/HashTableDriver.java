@@ -8,8 +8,15 @@ public class HashTableDriver {
 		
 		HashTable myHashTable = new HashTable(20);
 		
-		myHashTable.put(22);
+		myHashTable.put(15);
 		myHashTable.put(3);
+		myHashTable.put(22);
+		myHashTable.put(20);
+		myHashTable.put(15);
+		myHashTable.put(99);
+		myHashTable.put(18);
+		myHashTable.put(100);
+		
 		
 		myHashTable.printHash();
 		
