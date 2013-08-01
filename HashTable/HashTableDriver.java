@@ -20,6 +20,10 @@ public class HashTableDriver {
 		myHashTable.put(44);
 		myHashTable.put(18);
 		myHashTable.put(100);
+		myHashTable.put(30);
+		myHashTable.put(50);
+
+
 
 		myHashTable.printHash();
 

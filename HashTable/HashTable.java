@@ -10,6 +10,10 @@ public class HashTable {
 	int hashTableSize;
 	int usedLocations;
 
+	/**
+	 * Constructor
+	 * @param size
+	 */
 	public HashTable(int size) {
 
 		this.hashTableSize = size;
@@ -33,7 +37,14 @@ public class HashTable {
 
 	}
 
-	int getHash(int key) {
+	
+	/**
+	 * Creates a hash index based on key
+	 * value passed in as argument.
+	 * @param key
+	 * @return
+	 */
+	private int getHash(int key) {
 
 		return (key % hashTableSize);
 
@@ -42,7 +53,7 @@ public class HashTable {
 	/*
 	 * Add a new element into the hash table.
 	 */
-	void put(int key) {
+	public void put(int key) {
 
 		int index = 0;
 		boolean added = false;
@@ -53,16 +64,22 @@ public class HashTable {
 
 			switch (this.hashTable[index].getNodeStatus()) {
 			case IN_USE:
+				/*
+				 * If the getHash() returns a index already in use,
+				 * increment the index until a free slot is found.
+				 */
 				index++;
 				break;
 			case PREVIOUSLY_USED:
 			case UNUSED:
 				/*
 				 * Create a new Hash Node with the key value as the data and
-				 * place it in the hash table.
+				 * place it in the hash table. Increment the number of used
+				 * locations and set the "added" boolean flag to TRUE.
 				 */
 				this.hashTable[index] = new HashNode(key);
 				this.hashTable[index].setNodeStatus(Status.IN_USE);
+				usedLocations++;
 				added = true;
 				break;
 			default:
@@ -73,18 +90,18 @@ public class HashTable {
 		}
 	}
 
-	int get(int key) {
+	public int get(int key) {
 		return 0;
 	}
 
-	boolean contains(int key) {
+	public boolean contains(int key) {
 		return false;
 	}
 
-	void delete(int key) {
+	public void delete(int key) {
 	}
 
-	void printHash() {
+	public void printHash() {
 
 		for (int i = 0; i < this.hashTableSize; i++) {
 
@@ -94,6 +111,9 @@ public class HashTable {
 			System.out.println();
 
 		}
+
+		System.out.println("\nNumber of Available Slots: "
+				+ (hashTableSize - usedLocations));
 
 	}
 }
