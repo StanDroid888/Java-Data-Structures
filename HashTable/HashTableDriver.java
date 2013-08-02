@@ -21,7 +21,8 @@ public class HashTableDriver {
 		myHashTable.put(20);
 		myHashTable.put(24);
 		myHashTable.put(44);
-		myHashTable.put(18);
+		myHashTable.put(18);		
+		myHashTable.put(84);
 		myHashTable.put(100);
 		myHashTable.put(30);
 		myHashTable.put(50);
@@ -32,8 +33,16 @@ public class HashTableDriver {
 		System.out.println(myHashTable.contains(67));	
 		System.out.println("-------------------");
 		System.out.println("Retreived value: " + myHashTable.get(20));
+		System.out.println("Retreived value: " + myHashTable.get(222));
 		
 		myHashTable.delete(50);
+		myHashTable.delete(222);
+		myHashTable.delete(24);		
+		myHashTable.delete(84);
+
+		myHashTable.put(10);
+		
+		myHashTable.printHash();
 
 		System.out.println("End program");
 	}
