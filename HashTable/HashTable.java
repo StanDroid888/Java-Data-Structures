@@ -23,7 +23,6 @@ public class HashTable {
 		/*
 		 * Initialize
 		 */
-
 		HashNode initHashNode = new HashNode(-1);
 
 		initHashNode.setNodeStatus(Status.UNUSED);
@@ -103,13 +102,12 @@ public class HashTable {
 		int index = getHash(key);
 
 		/*
-		 * Check all Hash Nodes starting at the index 
-		 * which are being used. 
+		 * Check all Hash Nodes starting at the index which are being used.
 		 */
 		while (this.hashTable[index].getNodeStatus() == Status.IN_USE) {
 
 			/*
-			 * Return true if a particular Key is found. 
+			 * Return true if a particular Key is found.
 			 */
 			if (this.hashTable[index].getData() == key) {
 				System.out.println("Key " + this.hashTable[index].getData()
@@ -117,6 +115,10 @@ public class HashTable {
 				return true;
 
 			}
+			/*
+			 * Increment index value
+			 */
+			index++;
 		}
 		return false;
 	}
@@ -137,31 +139,80 @@ public class HashTable {
 		/*
 		 * Check to see if key is in fact a element in the hash table.
 		 */
-		if (!contains(key)) {
-			System.out.println("This key is NOT in the Hash Table!!");
-			return -1;
-		}
-
-		/*
-		 * Check all Hash Nodes starting at the index which are being used.
-		 */
-		while (this.hashTable[index].getNodeStatus() == Status.IN_USE) {
+		if (contains(key)) {
 
 			/*
-			 * Return true if a particular Key is found.
+			 * Check all Hash Nodes starting at the index which are being used.
 			 */
-			if (this.hashTable[index].getData() == key) {
-				return (int) this.hashTable[index].getData();
-		
+			while (this.hashTable[index].getNodeStatus() == Status.IN_USE) {
+
+				/*
+				 * Return TRUE if a particular Key is found.
+				 */
+				if (this.hashTable[index].getData() == key) {
+					return (int) this.hashTable[index].getData();
+				}
+				/*
+				 * Increment index 
+				 */
+				index++;
 			}
+		} else {
+			System.out.println("This key is NOT in the Hash Table!!");
 		}
+
 		return returnValue;
 	}
 
-	
+	/**
+	 * This method will delete a element from the Hash Table
+	 * based on the particular key passed in.
+	 * 
+	 * @param key
+	 */
 	public void delete(int key) {
+		
+		/*
+		 * Get index to start searching at.
+		 */
+		int index = getHash(key);
+		
+		/*
+		 * Check to see if key is in fact a element in the hash table.
+		 */
+		if (contains(key)) {
+
+			/*
+			 * Check all Hash Nodes starting at the index which are being used.
+			 */
+			while (this.hashTable[index].getNodeStatus() == Status.IN_USE) {
+
+				/*
+				 * Change the Node Status to PREVIOUSLY_USED
+				 */
+				if (this.hashTable[index].getData() == key) {
+					this.hashTable[index].setNodeStatus(Status.PREVIOUSLY_USED);
+					this.hashTable[index].setData(-1);
+					System.out.println("Element with KEY:" + key + " deleted from LOCATION: " + index);
+					return;
+				}
+				/*
+				 * Increment index 
+				 */
+				index++;
+			}
+		} else {
+			System.out.println("This key is NOT in the Hash Table!!");
+		}
+
+		return;
+
 	}
 
+	/*
+	 * This method will print out the contents of the 
+	 * Hash Table to standard output.
+	 */
 	public void printHash() {
 
 		for (int i = 0; i < this.hashTableSize; i++) {
@@ -177,4 +228,4 @@ public class HashTable {
 				+ (hashTableSize - usedLocations));
 
 	}
-}
+}// End class HashTable.java

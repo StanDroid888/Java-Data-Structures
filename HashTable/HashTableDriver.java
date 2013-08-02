@@ -32,6 +32,8 @@ public class HashTableDriver {
 		System.out.println(myHashTable.contains(67));	
 		System.out.println("-------------------");
 		System.out.println("Retreived value: " + myHashTable.get(20));
+		
+		myHashTable.delete(50);
 
 		System.out.println("End program");
 	}
