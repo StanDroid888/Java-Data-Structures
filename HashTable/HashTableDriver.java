@@ -5,11 +5,14 @@
  */
 public class HashTableDriver {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
+		HashTableDriver hashTableProgram = new HashTableDriver();
+		hashTableProgram.run();
+	
+	}
+	
+	public void run(){
 		HashTable myHashTable = new HashTable(20);
 
 		myHashTable.put(15);
@@ -27,10 +30,10 @@ public class HashTableDriver {
 
 		System.out.println(myHashTable.contains(30));	
 		System.out.println(myHashTable.contains(67));	
+		System.out.println("-------------------");
+		System.out.println("Retreived value: " + myHashTable.get(20));
 
 		System.out.println("End program");
-		
-		
 	}
 
 }

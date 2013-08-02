@@ -90,13 +90,9 @@ public class HashTable {
 		}
 	}
 
-	public int get(int key) {
-		return 0;
-	}
-
 	/**
 	 * This method returns TRUE if the key passed in as a argument is in the
-	 * hash table. Otherwise, the method returns FALSE signalling that the
+	 * hash table. Otherwise, the method returns FALSE signaling that the
 	 * particular key is not in the hash table at this time.
 	 * 
 	 * @param key
@@ -106,8 +102,15 @@ public class HashTable {
 
 		int index = getHash(key);
 
+		/*
+		 * Check all Hash Nodes starting at the index 
+		 * which are being used. 
+		 */
 		while (this.hashTable[index].getNodeStatus() == Status.IN_USE) {
 
+			/*
+			 * Return true if a particular Key is found. 
+			 */
 			if (this.hashTable[index].getData() == key) {
 				System.out.println("Key " + this.hashTable[index].getData()
 						+ " found.");
@@ -118,6 +121,44 @@ public class HashTable {
 		return false;
 	}
 
+	/**
+	 * This method returns the integer value associated with the key passed in
+	 * as a argument. If they key doesn't match a element in the hash table,
+	 * then a value of (-1) is returned.
+	 * 
+	 * @param key
+	 * @return returnValue
+	 */
+	public int get(int key) {
+
+		int index = getHash(key);
+		int returnValue = -1;
+
+		/*
+		 * Check to see if key is in fact a element in the hash table.
+		 */
+		if (!contains(key)) {
+			System.out.println("This key is NOT in the Hash Table!!");
+			return -1;
+		}
+
+		/*
+		 * Check all Hash Nodes starting at the index which are being used.
+		 */
+		while (this.hashTable[index].getNodeStatus() == Status.IN_USE) {
+
+			/*
+			 * Return true if a particular Key is found.
+			 */
+			if (this.hashTable[index].getData() == key) {
+				return (int) this.hashTable[index].getData();
+		
+			}
+		}
+		return returnValue;
+	}
+
+	
 	public void delete(int key) {
 	}
 
