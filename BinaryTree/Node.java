@@ -16,8 +16,8 @@ public class Node {
 			this.rightChild = null; 
 		}
 		
-		public Node(String rootValue) {
-			this.data = "";
+		public Node(String stringValue) {
+			this.data = stringValue;
 			this.leftChild = null;
 			this.rightChild = null; 
 		}
