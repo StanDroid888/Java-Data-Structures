@@ -2,18 +2,34 @@
 public class BinaryTreeDriver {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		BinaryTree myBinaryTree = new BinaryTree();
 		
-		myBinaryTree.insert("ROOT NODE");
-		myBinaryTree.insert("NODE ONE");
-		myBinaryTree.insert("NODE TWO");
-
-		myBinaryTree.insert("NODE THREE");
-		myBinaryTree.insert("NODE FOUR");
+		BinaryTreeDriver treeProgram = new BinaryTreeDriver();
 		
-		System.out.println("Program Ended");
+		treeProgram.run();
 
 	}
 
+	public void run(){
+		// TODO Auto-generated method stub
+		BinaryTree myBinaryTree = new BinaryTree();
+		
+		myBinaryTree.insert("M");
+		myBinaryTree.insert("B");
+		myBinaryTree.insert("W");
+		myBinaryTree.insert("T");
+		myBinaryTree.insert("B");
+		myBinaryTree.insert("D");
+		myBinaryTree.insert("J");
+		/*myBinaryTree.insert("Dustin Pediroa");
+		myBinaryTree.insert("Carlos Quintania");
+		myBinaryTree.insert("Johnathan Papalbon");
+		myBinaryTree.insert("Roger Clemens");
+		myBinaryTree.insert("Shane Victorino");
+		myBinaryTree.insert("Will Clark")*/;
+		
+		System.out.println(myBinaryTree.getRoot().toString());
+		
+		System.out.println("Program Ended");
+	}
+	
 }
