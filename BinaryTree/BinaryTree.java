@@ -1,19 +1,7 @@
 /**
- * @author Stanley Wong Class: BinaryTree.java Description: Implementation of a
- *         BinaryTree.
- * 
- */
-/**
- * @author bender
- *
- */
-/**
- * @author bender
- *
- */
-/**
- * @author bender
- *
+ * Programmer: Stanley Wong 
+ * Class: BinaryTree.java 
+ * Description: This class is a implementation of an Binary Tree.
  */
 public class BinaryTree {
 
