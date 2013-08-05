@@ -1,43 +1,64 @@
 /**
- * Programmer: Stanley Wong 
- * Class: BinaryTree.java 
- * Description: This class is an implementation of an Binary Tree.
+ * Programmer: Stanley Wong
+ * 
+ * Class: BinaryTree.java
+ * 
+ * Description: Implementation of an Binary Tree.
  * 
  */
 public class BinaryTree {
 
-	/*
+	/**
 	 * Attributes
 	 */
 	Node root;
 
+	/**
+	 * Constructor
+	 */
+	public BinaryTree() {
+		this.root = null;
+	}
+	
+	/**
+	 * Alternative Constructor
+	 */
+	public BinaryTree(String rootValue) {
+		this.root = new Node(rootValue);
+	}
+	
+	/**
+	 * Root getter method
+	 */
 	public Node getRoot() {
 		return root;
 	}
 
-	public BinaryTree() {
-		this.root = null;
-	}
-
-	public BinaryTree(String rootValue) {
-		this.root = new Node(rootValue);
-	}
-
-	/*
+	/**
 	 * This method initializes a Binary Tree.
 	 */
 	public void create() {
 		this.root = null;
 	}
 
-	/*
-	 * This method empties a Binary Tree by setting the Root Node to null and
-	 * letting the Garbage Collector clean it up.
+	/**
+	 * This method empties a Binary Tree by setting 
+	 * the Root Node to null and lets the 
+	 * Garbage Collector clean it up.
 	 */
 	public void destroy() {
 		this.root = null;
 	}
 
+	
+	/**
+	 * This method returns a boolean based on whether 
+	 * or not a Node with a particular String value
+	 * exist in the Binary Tree.
+	 * 
+	 * @param findString
+	 * @return
+	 */
 	public boolean find(String findString) {
 
 		/*
@@ -79,8 +100,9 @@ public class BinaryTree {
 		return isFound;
 	}
 
-	/*
-	 * This method will print out the Binary Tree in a sorted order.
+	/**
+	 * This method will print out the Binary Tree 
+	 * in a sorted order.
 	 */
 	public void printSort() {
 		System.out.println("\n\nSorted Values: ");
@@ -88,8 +110,9 @@ public class BinaryTree {
 		System.out.println();
 	}
 
-	/*
-	 * This method prints Binary Tree information to standard output.
+	/**
+	 * This method prints Binary Tree 
+	 * information to standard output.
 	 */
 	public void print() {
 		System.out.println(getRoot().toString());
@@ -98,7 +121,7 @@ public class BinaryTree {
 
 	/**
 	 * This method prints the Binary Tree via In-Order Traversal.
-	 * 
+	 *
 	 * @param currentNode
 	 */
 	public void printInOrder(Node currentNode) {
@@ -156,7 +179,7 @@ public class BinaryTree {
 	 * This method adds a Node to the Binary Tree.
 	 * 
 	 * @param insertionString
-	 * @return
+	 * @return isInserted
 	 */
 	public boolean insert(String insertionString) {
 
@@ -255,8 +278,11 @@ public class BinaryTree {
 
 	}// end insert() method
 
-	/*
+	/**
 	 * This method will delete a Node with a specified value.
+	 * 
+	 * @param delString
+	 * @return isDeleted
 	 */
 	public void delete(String delString) {
 
@@ -283,8 +309,8 @@ public class BinaryTree {
 				if ((currentNode.getData().compareToIgnoreCase(delString) == 0)) {
 
 					/*
-					 * Inform that Node is about to be deleted from the Binary
-					 * Tree.
+					 * Inform user that Node is about to be deleted 
+					 * from the Binary Tree.
 					 */
 					System.out.println("\n\nDeleting Node with value: "
 							+ delString);
@@ -340,9 +366,15 @@ public class BinaryTree {
 		return;
 	}// End delete()
 
+	/**
+	 * This method creates a informational 
+	 * String about the Binary Tree.
+	 * 
+	 * @return
+	 */
 	@Override
 	public String toString() {
 		return "BinaryTree [root=" + root + "]";
 	}
 
-}
+}// End BinaryTree.java class
