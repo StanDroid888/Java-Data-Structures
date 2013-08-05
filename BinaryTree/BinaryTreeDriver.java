@@ -1,4 +1,9 @@
-
+/**
+ * @author Stanley Wong
+ * Class: BinaryTreeDriver.java
+ * Description: Driver file for BinaryTree.java class
+ *
+ */
 public class BinaryTreeDriver {
 
 	public static void main(String[] args) {

@@ -1,3 +1,9 @@
+/**
+ * @author Stanley Wong
+ * Class: BinaryTree.java
+ * Description: Implementation of a BinaryTree. 
+ *
+ */
 public class BinaryTree {
 
 	Node root;
