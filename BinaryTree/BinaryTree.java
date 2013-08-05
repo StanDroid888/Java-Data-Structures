@@ -1,10 +1,15 @@
 /**
  * Programmer: Stanley Wong 
  * Class: BinaryTree.java 
- * Description: This class is a implementation of an Binary Tree.
+ * Description: This class is an implementation of 
+ * an Binary Tree.
+ * 
  */
 public class BinaryTree {
 
+	/*
+	 * Attributes
+	 */
 	Node root;
 
 	public Node getRoot() {
@@ -76,8 +81,7 @@ public class BinaryTree {
 	}
 
 	/*
-	 * This method will print out the Binary Tree
-	 * in a sorted order.
+	 * This method will print out the Binary Tree in a sorted order.
 	 */
 	public void printSort() {
 		System.out.println("\n\nSorted Values: ");
@@ -85,14 +89,18 @@ public class BinaryTree {
 		System.out.println();
 	}
 
+	/*
+	 * This method prints Binary Tree 
+	 * information to standard output.
+	 */
 	public void print() {
+		System.out.println(getRoot().toString());
 
 	}
 
-	
 	/**
-	 * This method prints the Binary Tree via
-	 * In-Order Traversal.
+	 * This method prints the Binary Tree via In-Order Traversal.
+	 * 
 	 * @param currentNode
 	 */
 	public void printInOrder(Node currentNode) {
@@ -110,8 +118,8 @@ public class BinaryTree {
 	}
 
 	/**
-	 * This method prints the Binary Tree via
-	 * Pre-Order Traversal.
+	 * This method prints the Binary Tree via Pre-Order Traversal.
+	 * 
 	 * @param currentNode
 	 */
 	public void printPreOrder(Node currentNode) {
@@ -129,8 +137,8 @@ public class BinaryTree {
 	}
 
 	/**
-	 * This method prints the Binary Tree via
-	 * Post-Order Traversal.
+	 * This method prints the Binary Tree via Post-Order Traversal.
+	 * 
 	 * @param currentNode
 	 */
 	public void printPostOrder(Node currentNode) {
@@ -143,10 +151,6 @@ public class BinaryTree {
 			printInOrder(currentNode.getRightChild());
 			System.out.print(currentNode.getData() + " ");
 		}
-
-	}
-
-	public void delete(String delString) {
 
 	}
 
@@ -252,6 +256,78 @@ public class BinaryTree {
 		return isInserted;
 
 	}// end insert() method
+
+	/*
+	 * This method will delete a Node with a specified value.
+	 */
+	public void delete(String delString) {
+
+		boolean isDeleted = false;
+		Node currentNode = getRoot();
+		Node previousNode = getRoot();
+
+		/*
+		 * Check to see if Node to delete is actually in the Binary Tree.
+		 */
+		if (find(delString)) {
+
+			/*
+			 * Keep searching until Node with value to delete is located.
+			 */
+			while (!isDeleted) {
+
+				/*
+				 * When the Node to delete is found, replace the deleted Node
+				 * with the Right Child Node based on information from the
+				 * previous Node. Otherwise, keep on searching.
+				 */
+				if (currentNode.getData().compareToIgnoreCase(delString) == 0) {
+					System.out
+							.println("\n\nDeleting Node with value: " + delString);
+
+					/*
+					 * Determine if the Node is being deleted from the left or
+					 * right of the previous Node.
+					 */
+					if (previousNode.getData().compareToIgnoreCase(delString) > 0) {
+						previousNode.setLeftChild(currentNode.getRightChild());
+					} else {
+						previousNode.setRightChild(currentNode.getRightChild());
+					}
+
+					/*
+					 * Delete currentNode and update boolean.
+					 */
+					currentNode = null;
+					isDeleted = true;
+				}
+				/*
+				 * Continue Searching on Left
+				 */
+				else if (currentNode.getData().compareToIgnoreCase(delString) > 0) {
+					previousNode = currentNode;
+					currentNode = currentNode.getLeftChild();
+				}
+				/*
+				 * Continue Searching on Right
+				 */
+				else if (currentNode.getData().compareToIgnoreCase(delString) < 0) {
+					previousNode = currentNode;
+					currentNode = currentNode.getRightChild();
+				}
+
+			}// end while loop
+
+		} else {
+			/*
+			 * The Node to be deleted is NOT a Binary Tree Element.
+			 */
+			System.out.println("The string " + delString
+					+ " is NOT in the Binary Tree.");
+		}
+
+		return;
+	}// End delete()
 
 	@Override
 	public String toString() {

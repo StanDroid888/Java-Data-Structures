@@ -32,13 +32,15 @@ public class BinaryTreeDriver {
 		myBinaryTree.insert("Roger");
 		myBinaryTree.insert("Amy");
 		
-		System.out.println(myBinaryTree.getRoot().toString());
+		myBinaryTree.print();
 		System.out.println(myBinaryTree.find("Tom"));
 		myBinaryTree.printInOrder(myBinaryTree.getRoot());
 		System.out.println();
 		myBinaryTree.printPreOrder(myBinaryTree.getRoot());
 		System.out.println();
 		myBinaryTree.printPostOrder(myBinaryTree.getRoot());
+		myBinaryTree.printSort();
+		myBinaryTree.delete("Roger");
 		myBinaryTree.printSort();
 		
 		System.out.println("\n\nProgram Ended");
