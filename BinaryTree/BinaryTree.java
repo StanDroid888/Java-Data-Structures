@@ -81,12 +81,11 @@ public class BinaryTree {
 		 */
 		while (!isInserted) {
 
-			if (currentNode == null) {
-
-				System.out.println("ERROR NULL NODE ENCOUNTERED");
-
-			} else if (currentNode.getData().compareToIgnoreCase(
-					insertionString) > 0) {
+			/*
+			 * Condition where insertion string is LESS than the current Node's
+			 * string value.
+			 */
+			if (currentNode.getData().compareToIgnoreCase(insertionString) > 0) {
 
 				if (currentNode.getLeftChild() == null) {
 					currentNode.setLeftChild(new Node(insertionString));
@@ -95,8 +94,12 @@ public class BinaryTree {
 					currentNode = currentNode.getLeftChild();
 				}
 
-			} else if (currentNode.getData().compareToIgnoreCase(
-					insertionString) < 0) {
+			}
+			/*
+			 * Condition where insertion string is GREATER than the current
+			 * Node's string value.
+			 */
+			else if (currentNode.getData().compareToIgnoreCase(insertionString) < 0) {
 
 				if (currentNode.getRightChild() == null) {
 					currentNode.setRightChild(new Node(insertionString));
@@ -104,17 +107,31 @@ public class BinaryTree {
 				} else {
 					currentNode = currentNode.getRightChild();
 				}
-			} else {
+			}
+			/*
+			 * Condition where insertion string is EQUAL than the current Node's
+			 * string value.
+			 */
+			else if (currentNode.getData().compareToIgnoreCase(insertionString) == 0) {
 				currentNode.setRightChild(new Node(insertionString));
 				isInserted = true;
-
+			}
+			/*
+			 * None of the expected conditions reached (Error)
+			 */
+			else {
+				System.out.println("Node Insertion Error:" + currentNode);
+				isInserted = false;
 			}
 
 		}// end while loop
 
+		/*
+		 * Return boolean value
+		 */
 		return isInserted;
 
-	}
+	}// end insert() method
 
 	@Override
 	public String toString() {
