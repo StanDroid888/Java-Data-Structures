@@ -19,10 +19,10 @@ public class BinaryTreeDriver {
 		BinaryTree myBinaryTree = new BinaryTree();
 		
 		myBinaryTree.insert("Manny");
-		myBinaryTree.insert("Bill");
+		myBinaryTree.insert("Bart");
 		myBinaryTree.insert("Billy");
 		myBinaryTree.insert("Wally");
-		myBinaryTree.insert("Bill");
+		myBinaryTree.insert("Homer");
 		myBinaryTree.insert("Tom");
 		myBinaryTree.insert("Brady");
 		myBinaryTree.insert("Dustin");
@@ -40,7 +40,12 @@ public class BinaryTreeDriver {
 		System.out.println();
 		myBinaryTree.printPostOrder(myBinaryTree.getRoot());
 		myBinaryTree.printSort();
+		
 		myBinaryTree.delete("Roger");
+		myBinaryTree.delete("Jill");
+		myBinaryTree.delete("Brady");
+		myBinaryTree.delete("Wally");
+		myBinaryTree.delete("Amy");
 		myBinaryTree.printSort();
 		
 		System.out.println("\n\nProgram Ended");

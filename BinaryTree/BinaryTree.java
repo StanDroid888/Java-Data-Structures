@@ -1,8 +1,7 @@
 /**
  * Programmer: Stanley Wong 
  * Class: BinaryTree.java 
- * Description: This class is an implementation of 
- * an Binary Tree.
+ * Description: This class is an implementation of an Binary Tree.
  * 
  */
 public class BinaryTree {
@@ -64,7 +63,7 @@ public class BinaryTree {
 		while (!isFound) {
 
 			if (currentNode.getData().compareToIgnoreCase(findString) == 0) {
-				System.out.println("Found Node with value: " + findString);
+				//System.out.println("Found Node with value: " + findString);
 				isFound = true;
 			} else if (currentNode.getData().compareToIgnoreCase(findString) > 0) {
 				currentNode = currentNode.getLeftChild();
@@ -90,8 +89,7 @@ public class BinaryTree {
 	}
 
 	/*
-	 * This method prints Binary Tree 
-	 * information to standard output.
+	 * This method prints Binary Tree information to standard output.
 	 */
 	public void print() {
 		System.out.println(getRoot().toString());
@@ -272,22 +270,28 @@ public class BinaryTree {
 		if (find(delString)) {
 
 			/*
-			 * Keep searching until Node with value to delete is located.
+			 * When the Node to delete is found, replace the deleted Node with
+			 * the Right Child Node based on information from the previous Node.
+			 * Otherwise, keep on searching.
 			 */
 			while (!isDeleted) {
 
 				/*
-				 * When the Node to delete is found, replace the deleted Node
-				 * with the Right Child Node based on information from the
-				 * previous Node. Otherwise, keep on searching.
+				 * Node to delete is found. Also, check for repeat values. Only
+				 * Delete the repeat value which was most recently added.
 				 */
-				if (currentNode.getData().compareToIgnoreCase(delString) == 0) {
-					System.out
-							.println("\n\nDeleting Node with value: " + delString);
+				if ((currentNode.getData().compareToIgnoreCase(delString) == 0)) {
+
+					/*
+					 * Inform that Node is about to be deleted from the Binary
+					 * Tree.
+					 */
+					System.out.println("\n\nDeleting Node with value: "
+							+ delString);
 
 					/*
 					 * Determine if the Node is being deleted from the left or
-					 * right of the previous Node.
+					 * right of the previous Node. Afterwards, replace
 					 */
 					if (previousNode.getData().compareToIgnoreCase(delString) > 0) {
 						previousNode.setLeftChild(currentNode.getRightChild());
@@ -302,18 +306,25 @@ public class BinaryTree {
 					isDeleted = true;
 				}
 				/*
-				 * Continue Searching on Left
+				 * Continue Searching on Left delString is less
 				 */
 				else if (currentNode.getData().compareToIgnoreCase(delString) > 0) {
 					previousNode = currentNode;
 					currentNode = currentNode.getLeftChild();
 				}
 				/*
-				 * Continue Searching on Right
+				 * Continue Searching on Right delString is greater
 				 */
 				else if (currentNode.getData().compareToIgnoreCase(delString) < 0) {
 					previousNode = currentNode;
 					currentNode = currentNode.getRightChild();
+				}
+				/*
+				 * Repeated Value Encountered
+				 */
+				else if (previousNode.getData().compareToIgnoreCase(delString) == 0) {
+					System.out.println("REPEAT VALUE");
+					previousNode = currentNode;
 				}
 
 			}// end while loop
