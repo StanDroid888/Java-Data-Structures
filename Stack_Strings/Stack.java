@@ -88,16 +88,6 @@ public class Stack {
 		System.out.println("<< Stack Size: " + getStackSize() + " >>");
 		System.out.println("----------------------");
 
-		/*
-		 * if (current == null) {
-		 * System.out.println("Bottom of Stack Reached!!");
-		 * System.out.println("Stack Size:" + getStackSize()); } else {
-		 * System.out.println("Node Data:" + current.data);
-		 * showStack(current.getNextNode());
-		 * 
-		 * }
-		 */
-
 	}
 
-}
+}// end Stack.java class
