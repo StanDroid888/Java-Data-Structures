@@ -13,19 +13,20 @@ public class BinaryTreeDriver {
 		// TODO Auto-generated method stub
 		BinaryTree myBinaryTree = new BinaryTree();
 		
-		myBinaryTree.insert("M");
-		myBinaryTree.insert("B");
-		myBinaryTree.insert("W");
-		myBinaryTree.insert("T");
-		myBinaryTree.insert("B");
-		myBinaryTree.insert("D");
-		myBinaryTree.insert("J");
-		/*myBinaryTree.insert("Dustin Pediroa");
-		myBinaryTree.insert("Carlos Quintania");
-		myBinaryTree.insert("Johnathan Papalbon");
-		myBinaryTree.insert("Roger Clemens");
-		myBinaryTree.insert("Shane Victorino");
-		myBinaryTree.insert("Will Clark")*/;
+		myBinaryTree.insert("Manny");
+		myBinaryTree.insert("Bill");
+		myBinaryTree.insert("Billy");
+		myBinaryTree.insert("Wally");
+		myBinaryTree.insert("Bill");
+		myBinaryTree.insert("Tom");
+		/*myBinaryTree.insert("Tom");
+		myBinaryTree.insert("Brady");
+		myBinaryTree.insert("Dustin");
+		myBinaryTree.insert("Jake");
+		myBinaryTree.insert("Billy");
+		myBinaryTree.insert("Tom");
+		myBinaryTree.insert("Shane");
+		myBinaryTree.insert("Roger");*/
 		
 		System.out.println(myBinaryTree.getRoot().toString());
 		

@@ -113,8 +113,27 @@ public class BinaryTree {
 			 * string value.
 			 */
 			else if (currentNode.getData().compareToIgnoreCase(insertionString) == 0) {
-				currentNode.setRightChild(new Node(insertionString));
-				isInserted = true;
+				/*
+				 * Add a repeated value as a right child to the Node where the
+				 * value first appears if the right child slot is open.
+				 */
+				if (currentNode.getRightChild() == null) {
+					currentNode.setRightChild(new Node(insertionString));
+					isInserted = true;
+				}
+				/*
+				 * Condition where a right child exist already The right child will be 
+				 * swapped with a Node that contains the repeated value in this case.
+				 */
+				else {
+
+					Node tempNode = new Node(insertionString);
+
+					tempNode.setRightChild(currentNode.getRightChild());
+					currentNode.setRightChild(tempNode);
+					isInserted = true;
+				}
+
 			}
 			/*
 			 * None of the expected conditions reached (Error)
@@ -122,6 +141,7 @@ public class BinaryTree {
 			else {
 				System.out.println("Node Insertion Error:" + currentNode);
 				isInserted = false;
+				break;
 			}
 
 		}// end while loop
