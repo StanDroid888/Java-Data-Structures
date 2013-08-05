@@ -24,18 +24,24 @@ public class BinaryTreeDriver {
 		myBinaryTree.insert("Wally");
 		myBinaryTree.insert("Bill");
 		myBinaryTree.insert("Tom");
-		/*myBinaryTree.insert("Tom");
 		myBinaryTree.insert("Brady");
 		myBinaryTree.insert("Dustin");
-		myBinaryTree.insert("Jake");
-		myBinaryTree.insert("Billy");
-		myBinaryTree.insert("Tom");
+		myBinaryTree.insert("Jill");
+		myBinaryTree.insert("Diane");
 		myBinaryTree.insert("Shane");
-		myBinaryTree.insert("Roger");*/
+		myBinaryTree.insert("Roger");
+		myBinaryTree.insert("Amy");
 		
 		System.out.println(myBinaryTree.getRoot().toString());
+		System.out.println(myBinaryTree.find("Tom"));
+		myBinaryTree.printInOrder(myBinaryTree.getRoot());
+		System.out.println();
+		myBinaryTree.printPreOrder(myBinaryTree.getRoot());
+		System.out.println();
+		myBinaryTree.printPostOrder(myBinaryTree.getRoot());
+		myBinaryTree.printSort();
 		
-		System.out.println("Program Ended");
+		System.out.println("\n\nProgram Ended");
 	}
 	
 }
