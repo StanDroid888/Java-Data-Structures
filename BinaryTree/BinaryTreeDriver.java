@@ -10,11 +10,18 @@ public class BinaryTreeDriver {
 		
 		BinaryTreeDriver treeProgram = new BinaryTreeDriver();
 		
-		treeProgram.run();
-
+		//treeProgram.runDriver();
+		treeProgram.runView();
+		
+	}
+	public void runView(){
+		
+		BinaryTreeView view = new BinaryTreeView();
+		view.startView();
+		
 	}
 
-	public void run(){
+	public void runDriver(){
 		// TODO Auto-generated method stub
 		BinaryTree myBinaryTree = new BinaryTree();
 		
