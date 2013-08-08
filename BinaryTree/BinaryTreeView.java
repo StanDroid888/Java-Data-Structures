@@ -36,7 +36,12 @@ public class BinaryTreeView {
 					.println("[0]: CREATE\n[1]: DESTROY\n[2]: FIND\n[3]: PRINTSORT\n[4]: PRINT\n[5]: IN_ORDER\n[6]: PRE_ORDER\n[7]: POST_ORDER\n[8]: DELETE\n[9]: INSERT\n[10]: QUIT\n");
 
 			System.out.println("\nPlease Enter a Option: ");
-
+			
+			/*
+			 * Get user input as integer and
+			 * translate into Options (ENUM) 
+			 * value.
+			 */
 			Options choice = Options.values()[get.nextInt()];
 
 			System.out.println("\nREQUEST: " + choice);
