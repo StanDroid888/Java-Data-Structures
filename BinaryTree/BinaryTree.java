@@ -19,14 +19,14 @@ public class BinaryTree {
 	public BinaryTree() {
 		this.root = null;
 	}
-	
+
 	/**
 	 * Alternative Constructor
 	 */
 	public BinaryTree(String rootValue) {
 		this.root = new Node(rootValue);
 	}
-	
+
 	/**
 	 * Root getter method
 	 */
@@ -42,19 +42,16 @@ public class BinaryTree {
 	}
 
 	/**
-	 * This method empties a Binary Tree by setting 
-	 * the Root Node to null and lets the 
-	 * Garbage Collector clean it up.
+	 * This method empties a Binary Tree by setting the Root Node to null and
+	 * lets the Garbage Collector clean it up.
 	 */
 	public void destroy() {
 		this.root = null;
 	}
 
-	
 	/**
-	 * This method returns a boolean based on whether 
-	 * or not a Node with a particular String value
-	 * exist in the Binary Tree.
+	 * This method returns a boolean based on whether or not a Node with a
+	 * particular String value exist in the Binary Tree.
 	 * 
 	 * @param findString
 	 * @return
@@ -84,7 +81,7 @@ public class BinaryTree {
 		while (!isFound) {
 
 			if (currentNode.getData().compareToIgnoreCase(findString) == 0) {
-				//System.out.println("Found Node with value: " + findString);
+				System.out.println("Found Node with value: " + findString);
 				isFound = true;
 			} else if (currentNode.getData().compareToIgnoreCase(findString) > 0) {
 				currentNode = currentNode.getLeftChild();
@@ -101,8 +98,7 @@ public class BinaryTree {
 	}
 
 	/**
-	 * This method will print out the Binary Tree 
-	 * in a sorted order.
+	 * This method will print out the Binary Tree in a sorted order.
 	 */
 	public void printSort() {
 		System.out.println("\n\nSorted Values: ");
@@ -111,8 +107,7 @@ public class BinaryTree {
 	}
 
 	/**
-	 * This method prints Binary Tree 
-	 * information to standard output.
+	 * This method prints Binary Tree information to standard output.
 	 */
 	public void print() {
 		System.out.println(getRoot().toString());
@@ -121,7 +116,7 @@ public class BinaryTree {
 
 	/**
 	 * This method prints the Binary Tree via In-Order Traversal.
-	 *
+	 * 
 	 * @param currentNode
 	 */
 	public void printInOrder(Node currentNode) {
@@ -200,9 +195,8 @@ public class BinaryTree {
 			isInserted = true;
 		}
 
-		/*
-		 * Look for where to insert the new Node while isInserted is not TRUE.
-		 */
+		
+
 		while (!isInserted) {
 
 			/*
@@ -233,44 +227,29 @@ public class BinaryTree {
 				}
 			}
 			/*
-			 * Condition where insertion string is EQUAL than the current Node's
+			 * Condition where insertion string is EQUAL to the current Node's
 			 * string value.
 			 */
 			else if (currentNode.getData().compareToIgnoreCase(insertionString) == 0) {
 				/*
-				 * Add a repeated value as a right child to the Node where the
-				 * value first appears if the right child slot is open.
+				 * Check to see if the requested String to be inserted is
+				 * already in the Binary Search Tree. The Binary Search Tree
+				 * should not have duplicate key values. Insertion will only
+				 * occur if the request is to add a new element onto the Binary
+				 * Search Tree.
 				 */
-				if (currentNode.getRightChild() == null) {
-					currentNode.setRightChild(new Node(insertionString));
-					isInserted = true;
-				}
-				/*
-				 * Condition where a right child exist already The right child
-				 * will be swapped with a Node that contains the repeated value
-				 * in this case.
-				 */
-				else {
-
-					Node tempNode = new Node(insertionString);
-
-					tempNode.setRightChild(currentNode.getRightChild());
-					currentNode.setRightChild(tempNode);
-					isInserted = true;
-				}
-
-			}
-			/*
-			 * None of the expected conditions reached (Error)
-			 */
-			else {
+				System.out.println("DUPLICATE VALUE \"" + insertionString +"\" can't be added to Binary Search Tree.");
+				isInserted = false;
+				break;
+				
+			} else {
 				System.out.println("Node Insertion Error:" + currentNode);
 				isInserted = false;
 				break;
 			}
-
+		
+		
 		}// end while loop
-
 		/*
 		 * Return boolean value
 		 */
@@ -309,8 +288,8 @@ public class BinaryTree {
 				if ((currentNode.getData().compareToIgnoreCase(delString) == 0)) {
 
 					/*
-					 * Inform user that Node is about to be deleted 
-					 * from the Binary Tree.
+					 * Inform user that Node is about to be deleted from the
+					 * Binary Tree.
 					 */
 					System.out.println("\n\nDeleting Node with value: "
 							+ delString);
@@ -367,8 +346,43 @@ public class BinaryTree {
 	}// End delete()
 
 	/**
-	 * This method creates a informational 
-	 * String about the Binary Tree.
+	 * This methods finds the minimum value
+	 * in the Binary Search Tree
+	 * 
+	 * @return currentNode
+	 */
+	public Node findMin(Node currentNode) {
+		
+		while(currentNode.getLeftChild() != null){
+			currentNode = currentNode.getLeftChild();
+		}
+		
+		System.out.println("Minium Value of Binary Tree is " + currentNode.getData());
+	
+		return currentNode;
+	
+	}
+	
+	/**
+	 * This methods finds the maxium value
+	 * in the Binary Search Tree
+	 * 
+	 * @return currentNode
+	 */
+	public Node findMax(Node currentNode) {
+		
+		while(currentNode.getRightChild() != null){
+			currentNode = currentNode.getRightChild();
+		}
+		
+		System.out.println("Maximum Value of Binary Tree is " + currentNode.getData());
+	
+		return currentNode;
+	
+	}
+	
+	/**
+	 * This method creates a informational String about the Binary Tree.
 	 * 
 	 * @return
 	 */

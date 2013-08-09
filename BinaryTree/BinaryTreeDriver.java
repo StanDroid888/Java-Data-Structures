@@ -10,8 +10,8 @@ public class BinaryTreeDriver {
 		
 		BinaryTreeDriver treeProgram = new BinaryTreeDriver();
 		
-		//treeProgram.runDriver();
-		treeProgram.runView();
+		treeProgram.runDriver();
+		//treeProgram.runView();
 		
 	}
 	public void runView(){
@@ -34,6 +34,7 @@ public class BinaryTreeDriver {
 		myBinaryTree.insert("Brady");
 		myBinaryTree.insert("Dustin");
 		myBinaryTree.insert("Jill");
+		myBinaryTree.insert("Wally");
 		myBinaryTree.insert("Diane");
 		myBinaryTree.insert("Shane");
 		myBinaryTree.insert("Roger");
@@ -53,6 +54,11 @@ public class BinaryTreeDriver {
 		myBinaryTree.delete("Brady");
 		myBinaryTree.delete("Wally");
 		myBinaryTree.delete("Amy");
+		
+		System.out.println("MAX: " + myBinaryTree.findMax(myBinaryTree.getRoot()).getData());
+
+		System.out.println("MIN: " + myBinaryTree.findMin(myBinaryTree.getRoot()).getData());
+		
 		myBinaryTree.printSort();
 		
 		System.out.println("\n\nProgram Ended");
