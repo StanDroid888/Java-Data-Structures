@@ -79,16 +79,16 @@ public class BinaryTree {
 		 * Look for where to insert the new Node while isInserted is not TRUE.
 		 */
 		while (!isFound) {
-
-			if (currentNode.getData().compareToIgnoreCase(findString) == 0) {
-				//System.out.println("Found Node with value: " + findString);
+			if (currentNode == null) {
+				break;
+			} else if (currentNode.getData().compareToIgnoreCase(findString) == 0) {
+				System.out.println("Found Node with value: " + findString);
 				isFound = true;
 			} else if (currentNode.getData().compareToIgnoreCase(findString) > 0) {
 				currentNode = currentNode.getLeftChild();
 			} else if (currentNode.getData().compareToIgnoreCase(findString) < 0) {
 				currentNode = currentNode.getRightChild();
 			}
-
 		}// end while loop
 
 		/*
@@ -195,8 +195,6 @@ public class BinaryTree {
 			isInserted = true;
 		}
 
-		
-
 		while (!isInserted) {
 
 			/*
@@ -238,17 +236,17 @@ public class BinaryTree {
 				 * occur if the request is to add a new element onto the Binary
 				 * Search Tree.
 				 */
-				System.out.println("DUPLICATE VALUE \"" + insertionString +"\" can't be added to Binary Search Tree.");
+				System.out.println("DUPLICATE VALUE \"" + insertionString
+						+ "\" can't be added to Binary Search Tree.");
 				isInserted = false;
 				break;
-				
+
 			} else {
 				System.out.println("Node Insertion Error:" + currentNode);
 				isInserted = false;
 				break;
 			}
-		
-		
+
 		}// end while loop
 		/*
 		 * Return boolean value
@@ -281,86 +279,120 @@ public class BinaryTree {
 			 */
 			while (!isDeleted) {
 
-				 
 				if ((currentNode.getData().compareToIgnoreCase(delString) == 0)) {
 
 					/*
-					 * Inform the user that the Node to be deleted has been found
-					 * and is about to be deleted from the Binary Search Tree.
+					 * Inform the user that the Node to be deleted has been
+					 * found and is about to be deleted from the Binary Search
+					 * Tree.
 					 */
 					System.out.println("\n\nDeleting Node with value: "
 							+ delString);
 
 					/*
 					 * Determine if the Node is being deleted from the left or
-					 * right of the previous Node. Also, determine the type of deletion
-					 * based on the number of children of the Node to be removed.
+					 * right of the previous Node. Also, determine the type of
+					 * deletion based on the number of children of the Node to
+					 * be removed.
 					 */
 					if (previousNode.getData().compareToIgnoreCase(delString) > 0) {
-						
+
 						/*
 						 * Delete Node with no children
 						 */
-						if(currentNode.getLeftChild() == null && currentNode.getRightChild() == null){
+						if (currentNode.getLeftChild() == null
+								&& currentNode.getRightChild() == null) {
 							previousNode.setLeftChild(null);
 						}
 						/*
 						 * Delete Node with only one child on the Left
 						 */
-						else if (currentNode.getLeftChild() != null && currentNode.getRightChild() == null){
-							previousNode.setLeftChild(currentNode.getLeftChild());
+						else if (currentNode.getLeftChild() != null
+								&& currentNode.getRightChild() == null) {
+							previousNode.setLeftChild(currentNode
+									.getLeftChild());
 						}
 						/*
 						 * Delete Node with only one child on the Right
 						 */
-						else if (currentNode.getLeftChild() == null && currentNode.getRightChild() != null){
-							previousNode.setLeftChild(currentNode.getRightChild());
-							
+						else if (currentNode.getLeftChild() == null
+								&& currentNode.getRightChild() != null) {
+							previousNode.setLeftChild(currentNode
+									.getRightChild());
+
 						}
 						/*
 						 * Delete Node with two children
 						 */
 						else if (currentNode.getLeftChild() != null
 								&& currentNode.getRightChild() != null) {
-							//Need to Implement
+
+							/*
+							 * Replace the currentNode data with the data of the
+							 * left most (minimum) value of the subtree.
+							 */
+							while (currentNode.getLeftChild() != null) {
+								previousNode = currentNode;
+								currentNode = currentNode.getLeftChild();
+							}
+							currentNode.setData(findMin(currentNode));
+							previousNode.setLeftChild(null);
+
 						}
-						
+
 					}
 					/*
 					 * Process other side instead
 					 */
-					else if (previousNode.getData().compareToIgnoreCase(delString) < 0){
+					else if (previousNode.getData().compareToIgnoreCase(
+							delString) < 0) {
 						/*
 						 * Delete Node with no children
 						 */
-						if(currentNode.getLeftChild() == null && currentNode.getRightChild() == null){
+						if (currentNode.getLeftChild() == null
+								&& currentNode.getRightChild() == null) {
 							previousNode.setRightChild(null);
 						}
 						/*
 						 * Delete Node with only one child on the Left
 						 */
-						else if (currentNode.getLeftChild() != null && currentNode.getRightChild() == null){
-							previousNode.setRightChild(currentNode.getLeftChild());
+						else if (currentNode.getLeftChild() != null
+								&& currentNode.getRightChild() == null) {
+							previousNode.setRightChild(currentNode
+									.getLeftChild());
 						}
 						/*
 						 * Delete Node with only one child on the Right
 						 */
-						else if (currentNode.getLeftChild() == null && currentNode.getRightChild() != null){
-							previousNode.setRightChild(currentNode.getRightChild());
-							
+						else if (currentNode.getLeftChild() == null
+								&& currentNode.getRightChild() != null) {
+							previousNode.setRightChild(currentNode
+									.getRightChild());
+
 						}
 						/*
 						 * Delete Node with two children
 						 */
 						else if (currentNode.getLeftChild() != null
 								&& currentNode.getRightChild() != null) {
-							//Need to Implement
+
+							/*
+							 * Replace the currentNode data with the data of the
+							 * left most (minimum) value of the subtree.
+							 */
+							while (currentNode.getLeftChild() != null) {
+								previousNode = currentNode;
+								currentNode = currentNode.getLeftChild();
+							}
+
+							currentNode.setData(findMin(currentNode));
+							previousNode.setLeftChild(null);
+
 						}
 					}
 					/*
-					 * Delete currentNode and update boolean.
+					 * Delete update boolean.
 					 */
-					//currentNode = null;
 					isDeleted = true;
 				}
 				/*
@@ -391,41 +423,41 @@ public class BinaryTree {
 	}// End delete()
 
 	/**
-	 * This methods finds the minimum value
-	 * in the Binary Search Tree
+	 * This methods finds the minimum value in the Binary Search Tree
 	 * 
 	 * @return currentNode
 	 */
-	public Node findMin(Node currentNode) {
-		
-		while(currentNode.getLeftChild() != null){
+	private String findMin(Node currentNode) {
+
+		while (currentNode.getLeftChild() != null) {
 			currentNode = currentNode.getLeftChild();
 		}
-		
-		System.out.println("Minium Value of Binary Tree is " + currentNode.getData());
-	
-		return currentNode;
-	
+
+		System.out.println("Minium Value of Binary Tree is "
+				+ currentNode.getData());
+
+		return currentNode.getData();
+
 	}
-	
+
 	/**
-	 * This methods finds the maxium value
-	 * in the Binary Search Tree
+	 * This methods finds the maxium value in the Binary Search Tree
 	 * 
 	 * @return currentNode
 	 */
 	public Node findMax(Node currentNode) {
-		
-		while(currentNode.getRightChild() != null){
+
+		while (currentNode.getRightChild() != null) {
 			currentNode = currentNode.getRightChild();
 		}
-		
-		System.out.println("Maximum Value of Binary Tree is " + currentNode.getData());
-	
+
+		System.out.println("Maximum Value of Binary Tree is "
+				+ currentNode.getData());
+
 		return currentNode;
-	
+
 	}
-	
+
 	/**
 	 * This method creates a informational String about the Binary Tree.
 	 * 

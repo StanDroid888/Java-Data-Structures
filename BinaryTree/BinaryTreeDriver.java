@@ -26,7 +26,7 @@ public class BinaryTreeDriver {
 		BinaryTree myBinaryTree = new BinaryTree();
 		
  
-		
+		myBinaryTree.insert("Brady");
 		myBinaryTree.insert("Manny");
 		myBinaryTree.insert("Bart");
 		myBinaryTree.insert("Billy");
@@ -42,9 +42,11 @@ public class BinaryTreeDriver {
 		myBinaryTree.insert("Amy");
 		myBinaryTree.print();
 		myBinaryTree.printSort();
+		myBinaryTree.printPreOrder(myBinaryTree.getRoot());
 		
 		myBinaryTree.delete("Manny");
 		myBinaryTree.delete("Diane");
+		myBinaryTree.printSort();
 		myBinaryTree.delete("Jill");
 		myBinaryTree.delete("Homer");
 		myBinaryTree.delete("Brady");
