@@ -81,7 +81,7 @@ public class BinaryTree {
 		while (!isFound) {
 
 			if (currentNode.getData().compareToIgnoreCase(findString) == 0) {
-				System.out.println("Found Node with value: " + findString);
+				//System.out.println("Found Node with value: " + findString);
 				isFound = true;
 			} else if (currentNode.getData().compareToIgnoreCase(findString) > 0) {
 				currentNode = currentNode.getLeftChild();
@@ -281,33 +281,86 @@ public class BinaryTree {
 			 */
 			while (!isDeleted) {
 
-				/*
-				 * Node to delete is found. Also, check for repeat values. Only
-				 * Delete the repeat value which was most recently added.
-				 */
+				 
 				if ((currentNode.getData().compareToIgnoreCase(delString) == 0)) {
 
 					/*
-					 * Inform user that Node is about to be deleted from the
-					 * Binary Tree.
+					 * Inform the user that the Node to be deleted has been found
+					 * and is about to be deleted from the Binary Search Tree.
 					 */
 					System.out.println("\n\nDeleting Node with value: "
 							+ delString);
 
 					/*
 					 * Determine if the Node is being deleted from the left or
-					 * right of the previous Node. Afterwards, replace
+					 * right of the previous Node. Also, determine the type of deletion
+					 * based on the number of children of the Node to be removed.
 					 */
 					if (previousNode.getData().compareToIgnoreCase(delString) > 0) {
-						previousNode.setLeftChild(currentNode.getRightChild());
-					} else {
-						previousNode.setRightChild(currentNode.getRightChild());
+						
+						/*
+						 * Delete Node with no children
+						 */
+						if(currentNode.getLeftChild() == null && currentNode.getRightChild() == null){
+							previousNode.setLeftChild(null);
+						}
+						/*
+						 * Delete Node with only one child on the Left
+						 */
+						else if (currentNode.getLeftChild() != null && currentNode.getRightChild() == null){
+							previousNode.setLeftChild(currentNode.getLeftChild());
+						}
+						/*
+						 * Delete Node with only one child on the Right
+						 */
+						else if (currentNode.getLeftChild() == null && currentNode.getRightChild() != null){
+							previousNode.setLeftChild(currentNode.getRightChild());
+							
+						}
+						/*
+						 * Delete Node with two children
+						 */
+						else if (currentNode.getLeftChild() != null
+								&& currentNode.getRightChild() != null) {
+							//Need to Implement
+						}
+						
 					}
-
+					/*
+					 * Process other side instead
+					 */
+					else if (previousNode.getData().compareToIgnoreCase(delString) < 0){
+						/*
+						 * Delete Node with no children
+						 */
+						if(currentNode.getLeftChild() == null && currentNode.getRightChild() == null){
+							previousNode.setRightChild(null);
+						}
+						/*
+						 * Delete Node with only one child on the Left
+						 */
+						else if (currentNode.getLeftChild() != null && currentNode.getRightChild() == null){
+							previousNode.setRightChild(currentNode.getLeftChild());
+						}
+						/*
+						 * Delete Node with only one child on the Right
+						 */
+						else if (currentNode.getLeftChild() == null && currentNode.getRightChild() != null){
+							previousNode.setRightChild(currentNode.getRightChild());
+							
+						}
+						/*
+						 * Delete Node with two children
+						 */
+						else if (currentNode.getLeftChild() != null
+								&& currentNode.getRightChild() != null) {
+							//Need to Implement
+						}
+					}
 					/*
 					 * Delete currentNode and update boolean.
 					 */
-					currentNode = null;
+					//currentNode = null;
 					isDeleted = true;
 				}
 				/*
@@ -324,14 +377,6 @@ public class BinaryTree {
 					previousNode = currentNode;
 					currentNode = currentNode.getRightChild();
 				}
-				/*
-				 * Repeated Value Encountered
-				 */
-				else if (previousNode.getData().compareToIgnoreCase(delString) == 0) {
-					System.out.println("REPEAT VALUE");
-					previousNode = currentNode;
-				}
-
 			}// end while loop
 
 		} else {
