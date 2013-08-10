@@ -1,31 +1,30 @@
 /**
- * @author Stanley Wong
- * Class: BinaryTreeDriver.java
- * Description: Driver file for BinaryTree.java class
- *
+ * @author Stanley Wong Class: BinaryTreeDriver.java Description: Driver file
+ *         for BinaryTree.java class
+ * 
  */
 public class BinaryTreeDriver {
 
 	public static void main(String[] args) {
-		
+
 		BinaryTreeDriver treeProgram = new BinaryTreeDriver();
-		
-		treeProgram.runDriver();
-		//treeProgram.runView();
-		
-	}
-	public void runView(){
-		
-		BinaryTreeView view = new BinaryTreeView();
-		view.startView();
-		
+
+		//treeProgram.runDriver();
+		treeProgram.runView();
+
 	}
 
-	public void runDriver(){
+	public void runView() {
+
+		BinaryTreeView view = new BinaryTreeView();
+		view.startView();
+
+	}
+
+	public void runDriver() {
 		// TODO Auto-generated method stub
 		BinaryTree myBinaryTree = new BinaryTree();
-		
- 
+
 		myBinaryTree.insert("Brady");
 		myBinaryTree.insert("Manny");
 		myBinaryTree.insert("Bart");
@@ -42,22 +41,17 @@ public class BinaryTreeDriver {
 		myBinaryTree.insert("Amy");
 		myBinaryTree.print();
 		myBinaryTree.printSort();
-		myBinaryTree.printPreOrder(myBinaryTree.getRoot());
-		
+
 		myBinaryTree.delete("Manny");
 		myBinaryTree.delete("Diane");
-		myBinaryTree.printSort();
 		myBinaryTree.delete("Jill");
 		myBinaryTree.delete("Homer");
 		myBinaryTree.delete("Brady");
 		myBinaryTree.delete("Roger");
-		myBinaryTree.delete("Amy");		
+		myBinaryTree.delete("Dustin");
 		myBinaryTree.printSort();
 
-		
-		 
-		
 		System.out.println("\n\nProgram Ended");
 	}
-	
+
 }

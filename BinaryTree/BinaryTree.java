@@ -268,9 +268,24 @@ public class BinaryTree {
 		Node previousNode = getRoot();
 
 		/*
-		 * Check to see if Node to delete is actually in the Binary Tree.
+		 * Check to see if Node to delete is the ROOT Node.
 		 */
-		if (find(delString)) {
+		if ((root.getData().compareToIgnoreCase(delString) == 0)) {
+
+			/*
+			 * Set the ROOT data to the data in the left most (minimum) Node of
+			 * the right subtree.
+			 */
+			root.setData(findMin(root.getRightChild()));
+			root.setRightChild(root.getRightChild().getRightChild());
+			System.out.println("ROOT NODE deletion. New ROOT value is now "
+					+ root.getData());
+
+		}
+		/*
+		 * Standard Deletion of Node which is not ROOT
+		 */
+		else if (find(delString)) {
 
 			/*
 			 * When the Node to delete is found, replace the deleted Node with
