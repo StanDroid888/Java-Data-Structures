@@ -33,17 +33,30 @@ public class BinaryTreeView {
 					.println("======================\n	MENU\n======================");
 
 			System.out
-					.println("[0]: CREATE\n[1]: DESTROY\n[2]: FIND\n[3]: PRINTSORT\n[4]: PRINT\n[5]: IN_ORDER\n[6]: PRE_ORDER\n[7]: POST_ORDER\n[8]: DELETE\n[9]: INSERT\n[10]: QUIT\n");
+					.println("[0]: CREATE\n[1]: DESTROY\n[2]: INSERT\n[3]: PRINTSORT\n[4]: PRINT\n[5]: IN_ORDER\n[6]: PRE_ORDER\n[7]: POST_ORDER\n[8]: DELETE\n[9]: FIND\n[10]: QUIT\n");
 
 			System.out.println("\nPlease Enter a Option: ");
-			
+
 			/*
-			 * Get user input as integer and
-			 * translate into Options (ENUM) 
+			 * Get user input as integer and translate into Options (ENUM)
 			 * value.
 			 */
-			Options choice = Options.values()[get.nextInt()];
+			int enumValue = get.nextInt();
+			Options choice;
 
+			/*
+			 * Check if user input is within range. If it is not, set the choice
+			 * value to UNKNOWN.
+			 */
+			if (enumValue > Options.values().length - 1) {
+				choice = Options.UNKNOWN;
+			} else {
+				choice = Options.values()[enumValue];
+			}
+
+			/*
+			 * Output choice info to user.
+			 */
 			System.out.println("\nREQUEST: " + choice);
 			System.out.println();
 
@@ -113,7 +126,10 @@ public class BinaryTreeView {
 				System.out.println("Ending Program");
 				break;
 
+			case UNKNOWN:
 			default:
+				System.out
+						.println("Unknown command requested. Please try again!");
 				break;
 			}
 
