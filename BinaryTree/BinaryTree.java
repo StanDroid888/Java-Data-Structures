@@ -82,7 +82,7 @@ public class BinaryTree {
 			if (currentNode == null) {
 				break;
 			} else if (currentNode.getData().compareToIgnoreCase(findString) == 0) {
-				System.out.println("Found Node with value: " + findString);
+				//System.out.println("Found Node with value: " + findString);
 				isFound = true;
 			} else if (currentNode.getData().compareToIgnoreCase(findString) > 0) {
 				currentNode = currentNode.getLeftChild();
@@ -127,7 +127,7 @@ public class BinaryTree {
 		} else {
 
 			printInOrder(currentNode.getLeftChild());
-			System.out.print(currentNode.getData() + ", ");
+			System.out.print(currentNode.getData() + "\t");
 			printInOrder(currentNode.getRightChild());
 		}
 
@@ -145,7 +145,7 @@ public class BinaryTree {
 			return;
 		} else {
 
-			System.out.print(currentNode.getData() + ", ");
+			System.out.print(currentNode.getData() + "\t");
 			printInOrder(currentNode.getLeftChild());
 			printInOrder(currentNode.getRightChild());
 		}
@@ -165,7 +165,7 @@ public class BinaryTree {
 		} else {
 			printInOrder(currentNode.getLeftChild());
 			printInOrder(currentNode.getRightChild());
-			System.out.print(currentNode.getData() + " ");
+			System.out.print(currentNode.getData() + "\t");
 		}
 
 	}
@@ -273,14 +273,22 @@ public class BinaryTree {
 		if ((root.getData().compareToIgnoreCase(delString) == 0)) {
 
 			/*
+			 * Check if root is the only Node on the tree
+			 */
+			if (root.getLeftChild() == null && root.getRightChild() == null) {
+				destroy();
+				System.out.println("Tree has been re-initalized.");
+			}
+			/*
 			 * Set the ROOT data to the data in the left most (minimum) Node of
 			 * the right subtree.
 			 */
-			root.setData(findMin(root.getRightChild()));
-			root.setRightChild(root.getRightChild().getRightChild());
-			System.out.println("ROOT NODE deletion. New ROOT value is now "
-					+ root.getData());
-
+			else {
+				root.setData(findMin(root.getRightChild()));
+				root.setRightChild(root.getRightChild().getRightChild());
+				System.out.println("ROOT NODE deletion. New ROOT value is now "
+						+ root.getData());
+			}
 		}
 		/*
 		 * Standard Deletion of Node which is not ROOT
