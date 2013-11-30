@@ -1,13 +1,12 @@
 /**
  * Programmer: Stanley Wong 
  * 
- * Email: aeropunt@gmail.com 
- * 
- * Problem ID: reversebinary
- * 
- * Date: 8/23/2013
- * 
- * Description: Reverse Binary class. 
+ * Description: Reverse Binary program. 
+ * This program takes a number via standard input (base 10 number)
+ * and then converts the number to its binary form. Afterwards, 
+ * the number is converted to a base 10 number based on the reversed 
+ * binary representation of the original number entered by the user  
+ *  
  */
 
 public class BinaryReverseAndConvert {
